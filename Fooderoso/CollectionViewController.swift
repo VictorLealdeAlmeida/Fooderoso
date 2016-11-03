@@ -34,7 +34,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! CellCollection
 
         
-        cell.productImage.image = UIImage(named: "coin")!
+        cell.productImage.image = UIImage(named: "feijoada")!
         cell.productText.text = items[(indexPath as NSIndexPath).row]
         
         return cell
