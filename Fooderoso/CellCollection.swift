@@ -6,4 +6,12 @@
 //  Copyright © 2016 AlunosDeKiev. All rights reserved.
 //
 
-import Foundation
+import UIKit
+class CellCollection: UICollectionViewCell {
+    
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var productText: UILabel!
+
+}
+
+
