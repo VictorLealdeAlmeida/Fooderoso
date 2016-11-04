@@ -15,6 +15,8 @@
 		D44C6D711DCBA189006DB663 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44C6D6F1DCBA189006DB663 /* LaunchScreen.storyboard */; };
 		D44C6D7B1DCBACFE006DB663 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C6D7A1DCBACFE006DB663 /* CollectionViewController.swift */; };
 		D44C6D7D1DCBB212006DB663 /* CellCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C6D7C1DCBB212006DB663 /* CellCollection.swift */; };
+		D44C6D811DCBD247006DB663 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C6D801DCBD247006DB663 /* ProductDetailViewController.swift */; };
+		D44C6D831DCBDBC9006DB663 /* TagsCellCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C6D821DCBDBC9006DB663 /* TagsCellCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		D44C6D721DCBA189006DB663 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D44C6D7A1DCBACFE006DB663 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		D44C6D7C1DCBB212006DB663 /* CellCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCollection.swift; sourceTree = "<group>"; };
+		D44C6D801DCBD247006DB663 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		D44C6D821DCBDBC9006DB663 /* TagsCellCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsCellCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				D44C6D7A1DCBACFE006DB663 /* CollectionViewController.swift */,
+				D44C6D801DCBD247006DB663 /* ProductDetailViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -85,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				D44C6D7C1DCBB212006DB663 /* CellCollection.swift */,
+				D44C6D821DCBDBC9006DB663 /* TagsCellCollection.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -167,6 +173,8 @@
 				D44C6D661DCBA189006DB663 /* ViewController.swift in Sources */,
 				D44C6D641DCBA189006DB663 /* AppDelegate.swift in Sources */,
 				D44C6D6C1DCBA189006DB663 /* Fooderoso.xcdatamodeld in Sources */,
+				D44C6D831DCBDBC9006DB663 /* TagsCellCollection.swift in Sources */,
+				D44C6D811DCBD247006DB663 /* ProductDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
