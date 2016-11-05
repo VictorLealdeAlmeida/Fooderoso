@@ -10,16 +10,30 @@ import UIKit
 
 class ProductDetailViewController: UIViewController {
     
-     var tags = ["Doce", "Salgado", "Chocolate", "Espacial"]
+    //-----
+    //Views
+    //-----
+    @IBOutlet weak var talkSellerView: UIView!
+ 
+    @IBOutlet weak var photoUser: UIImageView!
+    
+    
+    //Conteudo pras tags, modificar pra antender o back-end
+     var tags = ["Doce", "Salgado", "Chocolate", "Espacial", "Bebida"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //---------------
+        //Ajustes na view
+        //---------------
+        talkSellerView.layer.cornerRadius = 10
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
     
     
@@ -37,20 +51,10 @@ extension ProductDetailViewController: UICollectionViewDataSource, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath as IndexPath) as! TagsCellCollection
-        
-        
-        cell.tagTitle.text = "#Hast"
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath as IndexPath) as! TagsCellCollection
+        cell.tagTitle.text = tags[(indexPath as NSIndexPath).row]
+        cell.layer.cornerRadius = cell.bounds.height/2;
         
         return cell
-    }
-    
-    
-    //######################################################################
-    //ACHO QUE NAO FAZ SENTIDO SELECIONAR, APAGAR QUANDO TIVER CTZ
-    //######################################################################
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // handle tap events
-        print("You selected cell #\(indexPath.item)!")
     }
 }
