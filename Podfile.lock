@@ -56,6 +56,7 @@ PODS:
   - JSQMessagesViewController (7.3.4):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
+  - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
   - Firebase
@@ -67,6 +68,16 @@ DEPENDENCIES:
   - GooglePlaces
   - IQKeyboardManagerSwift
   - JSQMessagesViewController
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: ffbc7e4b8ee0e9ec76966007e7a7bef659aea284
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
   Firebase: 34187200ef4979dbd485c7aa685ef078bf587c86
@@ -86,7 +97,8 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: b3015e819559ca76381f87a0833f44d178564603
   JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 22a4a0b1ba0d7b205a0ab0edf154ae2077c086db
+PODFILE CHECKSUM: 762663067ec90e8362c09f20d2f190ab49f46d8c
 
 COCOAPODS: 1.0.0
