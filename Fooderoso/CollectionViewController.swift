@@ -10,8 +10,9 @@ import UIKit
 
 class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
-    var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
-
+    var items = ["1", "2", "3", "4", "5", "6", "7", "8"]
+    var imagesItems = ["feijoada", "briga", "porco", "sunny", "feijoada", "briga", "porco", "sunny"]
+    var indexSegue = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,16 +34,27 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! CellCollection
 
-        
-        cell.productImage.image = UIImage(named: "feijoada")!
-        cell.productText.text = items[(indexPath as NSIndexPath).row]
+        cell.productImage.image = UIImage(named: imagesItems[(indexPath as NSIndexPath).row])!
+        cell.productText.text = "Nome da imagem " + items[(indexPath as NSIndexPath).row]
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // handle tap events
+       
         print("You selected cell #\(indexPath.item)!")
+        indexSegue = indexPath.item
+        performSegue(withIdentifier: "HomeToProduct", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "HomeToProduct"){
+            var result:ProductDetailViewController = ProductDetailViewController()
+            result = (segue.destination as? ProductDetailViewController)!
+            
+            result.imageName = imagesItems[indexSegue]
+        }
+        
     }
 
 }
