@@ -10,21 +10,47 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-class FDUser {
-    let id: String
-    let firstName: String
-    let lastName: String
-    var description: String?
+class FDUser: NSObject {
+    let id: String?
+    var firstName: String
+    var lastName: String
+    var userDescription: String?
     var photo: UIImage? = nil
     
     init(withId id: String, andJSON json: JSON) {
         self.id = id
         self.firstName = json["first-name"].stringValue
         self.lastName = json["last-name"].stringValue
-        self.description = json["description"].string
+        self.userDescription = json["description"].string
         let photoStr = json["photo"].stringValue
         if let data = Data(base64Encoded: photoStr, options: .ignoreUnknownCharacters) {
             self.photo = UIImage(data: data)
         }
+    }
+    
+    override init() {
+        self.id = nil
+        self.firstName = ""
+        self.lastName = ""
+        self.userDescription = ""
+        self.photo = nil
+        
+        super.init()
+    }
+    
+    func toDict() -> [String : Any] {
+        var dict: [String: Any] = [:]
+        dict["first-name"] = self.firstName
+        dict["last-name"] = self.lastName
+        dict["description"] = self.userDescription
+        
+        if let image = self.photo {
+            let imageData = UIImagePNGRepresentation(image)
+            let base64Img = imageData?.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
+            
+            dict["photo"] = base64Img
+        }
+        
+        return dict
     }
 }

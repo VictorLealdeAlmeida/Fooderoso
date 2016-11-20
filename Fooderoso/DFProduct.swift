@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-class FDProcut {
+class FDProduct: NSObject {
     let id: String
     let name: String
-    let description: String
+    let prodDescription: String
     let photo: UIImage?
     let price: Double
     var priceString: String {
@@ -25,7 +25,7 @@ class FDProcut {
     init(withId id: String, andJSON json: JSON, andSeller user: FDUser) {
         self.id = id
         self.name = json["name"].stringValue
-        self.description = json["description"].stringValue
+        self.prodDescription = json["description"].stringValue
         
         let photoStr = json["photo"].stringValue
         if let data = Data(base64Encoded: photoStr, options: .ignoreUnknownCharacters) {
