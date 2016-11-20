@@ -7,14 +7,14 @@
 //
 
 import Foundation
-import SwiftyJSON
+//import SwiftyJSON
 
 struct FDProductTag {
     let name: String
     
-    init(withJSON json: JSON) {
-        self.name = json["name"].stringValue
-    }
+//    init(withJSON json: JSON) {
+//        self.name = json["name"].stringValue
+//    }
     
     init(withName name: String) {
         self.name = name

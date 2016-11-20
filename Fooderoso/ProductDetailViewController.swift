@@ -13,22 +13,36 @@ class ProductDetailViewController: UIViewController {
     //-----
     //Views
     //-----
-    @IBOutlet weak var talkSellerView: UIView!
  
+    @IBOutlet weak var talkSellerView: UIButton!
     @IBOutlet weak var photoUser: UIImageView!
+    
+    //------
+    //Labels
+    //------
+
     
     
     //Conteudo pras tags, modificar pra antender o back-end
-     var tags = ["Doce", "Salgado", "Chocolate", "Espacial", "Bebida"]
+     var tags = ["#Doce", "#Salgado", "#Chocolate", "#Espacial", "#Bebida"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         
         //---------------
         //Ajustes na view
         //---------------
         talkSellerView.layer.cornerRadius = 10
-        
+        photoUser.layer.cornerRadius = photoUser.bounds.height/2;
+        photoUser.clipsToBounds = true
+        photoUser.layer.borderColor = UIColor(red:0.97, green:0.25, blue:0.47, alpha:1.00).cgColor
+        photoUser.layer.borderWidth = 1
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,7 +57,7 @@ class ProductDetailViewController: UIViewController {
 //Extesion para cuidado do Collection das tags//
 //--------------------------------------------//
 
-extension ProductDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+extension ProductDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.tags.count
@@ -53,8 +67,29 @@ extension ProductDetailViewController: UICollectionViewDataSource, UICollectionV
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath as IndexPath) as! TagsCellCollection
         cell.tagTitle.text = tags[(indexPath as NSIndexPath).row]
+        cell.tagTitle.sizeToFit()
+        cell.tagTitle.textAlignment = .center;
         cell.layer.cornerRadius = cell.bounds.height/2;
+        
+       
         
         return cell
     }
+    
+   /* func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+      
+      //  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath as IndexPath) as! TagsCellCollection
+    
+        let cell = collectionView.cellForItem(at: indexPath) as! TagsCellCollection
+            
+        let itemWidth = cell.tagTitle.frame.width*2
+        let itemHeight = cell.tagTitle.frame.height
+        return CGSize(width: itemWidth, height: itemHeight)
+
+
+    }*/
+    
 }
+ 
+
+
