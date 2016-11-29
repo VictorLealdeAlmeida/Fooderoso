@@ -22,7 +22,7 @@ class FDProduct: NSObject {
     let seller: FDUser?
     var tags: [FDProductTag] = []
     
-    init(withId id: String, andJSON json: JSON, andSeller user: FDUser) {
+    init(withId id: String, andJSON json: JSON, andSeller user: FDUser?=nil) {
         self.id = id
         self.name = json["name"].stringValue
         self.prodDescription = json["description"].stringValue
@@ -65,7 +65,9 @@ class FDProduct: NSObject {
         dict["photo"] = base64Img
         
         dict["price"] = self.price
-        dict["seller"] = self.seller.id!
+        if let seller = self.seller {
+            dict["seller"] = seller.id!
+        }
         
         var tagsKeys:[String] = []
         for tag in self.tags {

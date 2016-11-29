@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
+class CollectionViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
     var items = ["1", "2", "3", "4", "5", "6", "7", "8"]
     var imagesItems = ["feijoada", "briga", "porco", "sunny", "feijoada", "briga", "porco", "sunny"]
@@ -26,7 +26,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         return self.items.count
+         return self.manager.productsOnSale.count
     }
     
     // make a cell for each cell index path

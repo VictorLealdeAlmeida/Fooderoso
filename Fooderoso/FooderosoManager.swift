@@ -113,7 +113,8 @@ class FooderosoManager: NSObject {
                 }
                 print(productJSON)
                 print(key)
-                
+                let newProduct = FDProduct(withId: key, andJSON: productJSON)
+                self.productsOnSale.append(newProduct)
             }
             
         }, withCancel: {error in
