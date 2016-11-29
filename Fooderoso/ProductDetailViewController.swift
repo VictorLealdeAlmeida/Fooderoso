@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GooglePlaces
 
 class ProductDetailViewController: UIViewController {
     
@@ -22,15 +23,18 @@ class ProductDetailViewController: UIViewController {
     //Infos
     //-----
 
+    var placesClient: GMSPlacesClient?
     var imageName : String = ""
-    
+
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var addressLabel: UILabel!
     
     //Conteudo pras tags, modificar pra antender o back-end
      var tags = ["#Doce", "#Salgado", "#Chocolate", "#Espacial", "#Bebida"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+   
         photoProduct.image = UIImage(named: imageName)
         
     }
@@ -46,6 +50,56 @@ class ProductDetailViewController: UIViewController {
         photoUser.layer.borderColor = UIColor(red:0.97, green:0.25, blue:0.47, alpha:1.00).cgColor
         photoUser.layer.borderWidth = 1
     }
+    
+   /* @IBAction func getCurrentPlace(sender: UIButton) {
+        
+        placesClient?.currentPlace(callback: {
+            (placeLikelihoodList: GMSPlaceLikelihoodList?, error: NSError?) -> Void in
+            if let error = error {
+                print("Pick Place error: \(error.localizedDescription)")
+                return
+            }
+            
+            self.nameLabel.text = "No current place"
+            self.addressLabel.text = ""
+            
+            if let placeLicklihoodList = placeLikelihoodList {
+                let place = placeLicklihoodList.likelihoods.first?.place
+                if let place = place {
+                    self.nameLabel.text = place.name
+                    self.addressLabel.text = place.formattedAddress.componentsSeparatedByString(", ")
+                        .joinWithSeparator("\n")
+                }
+            }
+        } as! GMSPlaceLikelihoodListCallback)
+    }*/
+    
+    @IBAction func go(_ sender: AnyObject) {
+        var placesClient: GMSPlacesClient?
+        placesClient = GMSPlacesClient.shared()
+        placesClient?.currentPlace(callback: {
+            (placeLikelihoodList: GMSPlaceLikelihoodList?, error: NSError?) in
+            
+            if let error = error {
+                print("Pick Place error: \(error.localizedDescription)")
+                let alert = UIAlertController(title: "Error", message: "Couldn't find a location", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+                return
+            }
+            
+            if let placeLikelihoodList = placeLikelihoodList {
+                let place = placeLikelihoodList.likelihoods.first?.place
+                if let place = place {
+                    self.nameLabel.text = place.name
+                }
+            }
+            
+            
+            } as! GMSPlaceLikelihoodListCallback)
+    }
+   
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -96,6 +150,7 @@ extension ProductDetailViewController: UICollectionViewDataSource, UICollectionV
     }*/
     
 }
- 
+
+
 
 
