@@ -23,8 +23,11 @@ class FooderosoManager: NSObject {
     var currentUser: FDUser?
     var userProducts: [FDProduct] = []
     
+    var productsOnSale: [FDProduct] = []
+    
     fileprivate var userChatsKeys: [String] = []
     fileprivate var userProductsKeys: [String] = []
+    fileprivate var loadedUsers: [FDUser] = []
     
     /*
      #################
@@ -93,6 +96,29 @@ class FooderosoManager: NSObject {
     
     func startSelling() {
         
+    }
+    
+    func getProducts() {
+        firebaseRef.child("products").queryOrdered(byChild: "selling").queryEqual(toValue: true).observe(.value, with: {productsSnapshot in
+            guard let productsJSON = productsSnapshot.json else {
+                print("No product found")
+                NotificationCenter.default.post(name: FDNotification.noProductsFound, object: nil)
+                return
+            }
+            
+            self.productsOnSale = []
+            for (key, productJSON) in productsJSON.dictionaryValue {
+                if productJSON["seller"].stringValue == self.currentUser!.id! {
+                    continue
+                }
+                print(productJSON)
+                print(key)
+                
+            }
+            
+        }, withCancel: {error in
+            print("FAILURE: something went wrong while trying to get the products")
+        })
     }
 
 }

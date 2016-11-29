@@ -29,6 +29,15 @@
                                     <action selector="createProduct:" destination="J2l-F9-dvk" eventType="touchUpInside" id="RGZ-uz-a80"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seQ-ga-hXG">
+                                <rect key="frame" x="135" y="400" width="104" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Listar produtos"/>
+                                <connections>
+                                    <action selector="createProduct:" destination="J2l-F9-dvk" eventType="touchUpInside" id="bDc-n0-4g2"/>
+                                    <action selector="listProducts:" destination="J2l-F9-dvk" eventType="touchUpInside" id="rA5-hf-yit"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

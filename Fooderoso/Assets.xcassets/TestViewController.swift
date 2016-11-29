@@ -27,6 +27,10 @@ class TestViewController: BaseViewController {
     }
     
 
+    @IBAction func listProducts(_ sender: Any) {
+        self.manager.getProducts()
+    }
+    
     /*
     // MARK: - Navigation
 

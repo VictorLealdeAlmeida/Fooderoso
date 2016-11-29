@@ -19,7 +19,7 @@ class FDProduct: NSObject {
     var priceString: String {
         return "R$\(String(format: "%.2f", self.price))"
     }
-    let seller: FDUser
+    let seller: FDUser?
     var tags: [FDProductTag] = []
     
     init(withId id: String, andJSON json: JSON, andSeller user: FDUser) {
