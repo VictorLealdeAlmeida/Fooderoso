@@ -19,6 +19,12 @@
 		67F56C791DE24002001AAD0F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F56C781DE24002001AAD0F /* TestViewController.swift */; };
 		67F56C7B1DE24067001AAD0F /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F56C7A1DE24067001AAD0F /* Test.storyboard */; };
 		67F56C7D1DE24763001AAD0F /* FooderosoNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F56C7C1DE24763001AAD0F /* FooderosoNotifications.swift */; };
+		67F56CA71DE260A0001AAD0F /* GeoFire.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F56C9E1DE260A0001AAD0F /* GeoFire.m */; };
+		67F56CA81DE260A0001AAD0F /* GFBase32Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F56CA01DE260A0001AAD0F /* GFBase32Utils.m */; };
+		67F56CA91DE260A0001AAD0F /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F56CA21DE260A0001AAD0F /* GFGeoHash.m */; };
+		67F56CAA1DE260A0001AAD0F /* GFGeoHashQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F56CA41DE260A0001AAD0F /* GFGeoHashQuery.m */; };
+		67F56CAB1DE260A0001AAD0F /* GFQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F56CA61DE260A0001AAD0F /* GFQuery.m */; };
+		67F56CAD1DE26274001AAD0F /* FDUserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F56CAC1DE26274001AAD0F /* FDUserStore.swift */; };
 		D44C6D641DCBA189006DB663 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C6D631DCBA189006DB663 /* AppDelegate.swift */; };
 		D44C6D661DCBA189006DB663 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C6D651DCBA189006DB663 /* ViewController.swift */; };
 		D44C6D691DCBA189006DB663 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44C6D671DCBA189006DB663 /* Main.storyboard */; };
@@ -47,6 +53,22 @@
 		67F56C781DE24002001AAD0F /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = Assets.xcassets/TestViewController.swift; sourceTree = "<group>"; };
 		67F56C7A1DE24067001AAD0F /* Test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		67F56C7C1DE24763001AAD0F /* FooderosoNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooderosoNotifications.swift; sourceTree = "<group>"; };
+		67F56C971DE260A0001AAD0F /* GeoFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoFire.h; sourceTree = "<group>"; };
+		67F56C981DE260A0001AAD0F /* GFCircleQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCircleQuery.h; sourceTree = "<group>"; };
+		67F56C991DE260A0001AAD0F /* GFQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFQuery.h; sourceTree = "<group>"; };
+		67F56C9A1DE260A0001AAD0F /* GFRegionQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFRegionQuery.h; sourceTree = "<group>"; };
+		67F56C9B1DE260A0001AAD0F /* GeoFire-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoFire-Prefix.pch"; sourceTree = "<group>"; };
+		67F56C9D1DE260A0001AAD0F /* GeoFire+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoFire+Private.h"; sourceTree = "<group>"; };
+		67F56C9E1DE260A0001AAD0F /* GeoFire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoFire.m; sourceTree = "<group>"; };
+		67F56C9F1DE260A0001AAD0F /* GFBase32Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFBase32Utils.h; sourceTree = "<group>"; };
+		67F56CA01DE260A0001AAD0F /* GFBase32Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFBase32Utils.m; sourceTree = "<group>"; };
+		67F56CA11DE260A0001AAD0F /* GFGeoHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFGeoHash.h; sourceTree = "<group>"; };
+		67F56CA21DE260A0001AAD0F /* GFGeoHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFGeoHash.m; sourceTree = "<group>"; };
+		67F56CA31DE260A0001AAD0F /* GFGeoHashQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFGeoHashQuery.h; sourceTree = "<group>"; };
+		67F56CA41DE260A0001AAD0F /* GFGeoHashQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFGeoHashQuery.m; sourceTree = "<group>"; };
+		67F56CA51DE260A0001AAD0F /* GFQuery+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GFQuery+Private.h"; sourceTree = "<group>"; };
+		67F56CA61DE260A0001AAD0F /* GFQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFQuery.m; sourceTree = "<group>"; };
+		67F56CAC1DE26274001AAD0F /* FDUserStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDUserStore.swift; sourceTree = "<group>"; };
 		703653FE345C6DC2E9927EDE /* Pods-Fooderoso.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fooderoso.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fooderoso/Pods-Fooderoso.debug.xcconfig"; sourceTree = "<group>"; };
 		BA2CDF7E0337FC2DDDDE4AAB /* Pods-Fooderoso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fooderoso.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fooderoso/Pods-Fooderoso.release.xcconfig"; sourceTree = "<group>"; };
 		D44C6D601DCBA189006DB663 /* Fooderoso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fooderoso.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +123,7 @@
 			children = (
 				6797D3FD1DCE2F1900DD4587 /* FDUser.swift */,
 				6797D4021DCE3C3B00DD4587 /* DFProduct.swift */,
+				67F56CAC1DE26274001AAD0F /* FDUserStore.swift */,
 				6797D4061DCE3DAC00DD4587 /* FDProductTag.swift */,
 				67F56C701DE22F36001AAD0F /* FDChatRoom.swift */,
 				67F56C721DE22FB4001AAD0F /* FDChatMessage.swift */,
@@ -114,6 +137,44 @@
 				6797D4001DCE35F800DD4587 /* FIRDataSnapshot+JSON.swift */,
 			);
 			name = "Custom Extensions";
+			sourceTree = "<group>";
+		};
+		67F56C951DE260A0001AAD0F /* GeoFire */ = {
+			isa = PBXGroup;
+			children = (
+				67F56C961DE260A0001AAD0F /* API */,
+				67F56C9B1DE260A0001AAD0F /* GeoFire-Prefix.pch */,
+				67F56C9C1DE260A0001AAD0F /* Implementation */,
+			);
+			path = GeoFire;
+			sourceTree = "<group>";
+		};
+		67F56C961DE260A0001AAD0F /* API */ = {
+			isa = PBXGroup;
+			children = (
+				67F56C971DE260A0001AAD0F /* GeoFire.h */,
+				67F56C981DE260A0001AAD0F /* GFCircleQuery.h */,
+				67F56C991DE260A0001AAD0F /* GFQuery.h */,
+				67F56C9A1DE260A0001AAD0F /* GFRegionQuery.h */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		67F56C9C1DE260A0001AAD0F /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				67F56C9D1DE260A0001AAD0F /* GeoFire+Private.h */,
+				67F56C9E1DE260A0001AAD0F /* GeoFire.m */,
+				67F56C9F1DE260A0001AAD0F /* GFBase32Utils.h */,
+				67F56CA01DE260A0001AAD0F /* GFBase32Utils.m */,
+				67F56CA11DE260A0001AAD0F /* GFGeoHash.h */,
+				67F56CA21DE260A0001AAD0F /* GFGeoHash.m */,
+				67F56CA31DE260A0001AAD0F /* GFGeoHashQuery.h */,
+				67F56CA41DE260A0001AAD0F /* GFGeoHashQuery.m */,
+				67F56CA51DE260A0001AAD0F /* GFQuery+Private.h */,
+				67F56CA61DE260A0001AAD0F /* GFQuery.m */,
+			);
+			path = Implementation;
 			sourceTree = "<group>";
 		};
 		78BA05FC3E66389A8BAD9EDC /* Pods */ = {
@@ -146,6 +207,7 @@
 		D44C6D621DCBA189006DB663 /* Fooderoso */ = {
 			isa = PBXGroup;
 			children = (
+				67F56C951DE260A0001AAD0F /* GeoFire */,
 				6797D3FB1DCE216500DD4587 /* App Logic */,
 				D44C6D631DCBA189006DB663 /* AppDelegate.swift */,
 				6797D3FF1DCE35BA00DD4587 /* Custom Extensions */,
@@ -361,20 +423,26 @@
 			files = (
 				6797D4071DCE3DAC00DD4587 /* FDProductTag.swift in Sources */,
 				6797D3FE1DCE2F1900DD4587 /* FDUser.swift in Sources */,
+				67F56CAA1DE260A0001AAD0F /* GFGeoHashQuery.m in Sources */,
 				D44C6D7D1DCBB212006DB663 /* CellCollection.swift in Sources */,
 				D44C6D7B1DCBACFE006DB663 /* CollectionViewController.swift in Sources */,
 				6797D4011DCE35F800DD4587 /* FIRDataSnapshot+JSON.swift in Sources */,
+				67F56CA81DE260A0001AAD0F /* GFBase32Utils.m in Sources */,
 				D44C6D661DCBA189006DB663 /* ViewController.swift in Sources */,
 				67F56C711DE22F36001AAD0F /* FDChatRoom.swift in Sources */,
 				67F56C771DE23F6C001AAD0F /* BaseViewController.swift in Sources */,
 				D48861C81DE2139C00B5DD2F /* StoreViewController.swift in Sources */,
+				67F56CA71DE260A0001AAD0F /* GeoFire.m in Sources */,
 				6797D4031DCE3C3B00DD4587 /* DFProduct.swift in Sources */,
 				D44C6D641DCBA189006DB663 /* AppDelegate.swift in Sources */,
 				D44C6D6C1DCBA189006DB663 /* Fooderoso.xcdatamodeld in Sources */,
+				67F56CAB1DE260A0001AAD0F /* GFQuery.m in Sources */,
 				67F56C7D1DE24763001AAD0F /* FooderosoNotifications.swift in Sources */,
 				D44C6D831DCBDBC9006DB663 /* TagsCellCollection.swift in Sources */,
 				67F56C751DE2335D001AAD0F /* FooderosoManager.swift in Sources */,
 				D48861C61DE2132D00B5DD2F /* ChatViewController.swift in Sources */,
+				67F56CA91DE260A0001AAD0F /* GFGeoHash.m in Sources */,
+				67F56CAD1DE26274001AAD0F /* FDUserStore.swift in Sources */,
 				67F56C731DE22FB4001AAD0F /* FDChatMessage.swift in Sources */,
 				67F56C791DE24002001AAD0F /* TestViewController.swift in Sources */,
 				D44C6D811DCBD247006DB663 /* ProductDetailViewController.swift in Sources */,

@@ -11,7 +11,7 @@ import UIKit
 import SwiftyJSON
 
 class FDUser: NSObject {
-    let id: String?
+    var id: String?
     var firstName: String
     var lastName: String
     var userDescription: String?

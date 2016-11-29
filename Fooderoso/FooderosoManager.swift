@@ -26,6 +26,11 @@ class FooderosoManager: NSObject {
     fileprivate var userChatsKeys: [String] = []
     fileprivate var userProductsKeys: [String] = []
     
+    /*
+     #################
+        AUTH
+     #################
+     */
     func loginAnonymously() {
         if let _ = FIRAuth.auth()?.currentUser {
             self.loadUserInfo()
@@ -58,6 +63,37 @@ class FooderosoManager: NSObject {
             self.loadUserInfo()
         })
     }
+    
+    /*
+     #################
+        PRODUCTS
+     #################
+     */
+    func saveProduct(_ product: FDProduct) {
+        var pathsDict:[String:Any] = [:]
+        let productKey = firebaseRef.child("products").childByAutoId().key
+        pathsDict["products/\(productKey)"] = product.toDict()
+        
+        for tag in product.tags {
+            pathsDict["tags/\(tag.name)/products/\(productKey)"] = true
+        }
+        
+        firebaseRef.updateChildValues(pathsDict, withCompletionBlock: { (error, ref) in
+            if let error = error {
+                print("FAILURE: something went wrong while trying to save the product")
+                print(error.localizedDescription)
+                NotificationCenter.default.post(name: FDNotification.productCreationFailed, object: nil)
+                return
+            }
+            
+            print("SUCCESS: product created successfully")
+            NotificationCenter.default.post(name: FDNotification.productCreatedSuccessfully, object: nil)
+        })
+    }
+    
+    func startSelling() {
+        
+    }
 
 }
 
@@ -68,6 +104,8 @@ extension FooderosoManager {
         dict["is-selling"] = false
         
         let userId = FIRAuth.auth()?.currentUser?.uid
+        user.id = userId
+        self.currentUser = user
         firebaseRef.child("users/\(userId!)").setValue(dict, withCompletionBlock: { (error, ref) in
             if let error = error {
                 print("FAILURE: something went wrong while trying to save the user")
@@ -85,12 +123,12 @@ extension FooderosoManager {
             return
         }
         firebaseRef.child("users/\(userId)").observe(.value, with: { (userSnapshot) in
-            guard let snapValue = userSnapshot.value as? JSON else {
+            guard let userJSON = userSnapshot.json else {
                 return
             }
             
-            self.currentUser = FDUser(withId: userId, andJSON: snapValue)
-            if let productsKeys = snapValue["products"].arrayObject as? [[String : Bool]] {
+            self.currentUser = FDUser(withId: userId, andJSON: userJSON)
+            if let productsKeys = userJSON["products"].arrayObject as? [[String : Bool]] {
                 self.userProductsKeys = []
 //                for (productKey, _) in productsKeys {
 //                    self.userProductsKeys.append(productKey)

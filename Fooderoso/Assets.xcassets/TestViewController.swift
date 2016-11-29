@@ -19,7 +19,11 @@ class TestViewController: BaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
-        self.manager.loginAnonymously()
+    }
+    @IBAction func createProduct(_ sender: Any) {
+        let tags = [FDProductTag(withName: "chocolate"), FDProductTag(withName: "doce")]
+        let prod = FDProduct(withName: "Cookie", andDesc: "Cookies deliciosos, feitos com muito amor", andPhoto: #imageLiteral(resourceName: "feijoada"), andPrice: 2.5, andSeller: self.currentUser!, andTags: tags)
+        self.manager.saveProduct(prod)
     }
     
 

@@ -20,6 +20,16 @@
                     <view key="view" contentMode="scaleToFill" id="wQG-Mx-KHX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQK-Fs-ozc">
+                                <rect key="frame" x="141" y="318" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Criar produto"/>
+                                <connections>
+                                    <action selector="createProduct:" destination="J2l-F9-dvk" eventType="touchUpInside" id="RGZ-uz-a80"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="xdg-Ap-b5k"/>
@@ -33,7 +43,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2El-cv-trD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8WP-81-BtN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8WP-81-BtN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

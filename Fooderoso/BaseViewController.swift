@@ -11,6 +11,9 @@ import UIKit
 class BaseViewController: UIViewController {
 
     var manager = FooderosoManager.instance
+    var currentUser: FDUser? {
+        return manager.currentUser
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
