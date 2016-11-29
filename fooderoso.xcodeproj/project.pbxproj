@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		676522D31DEE19BD00BDB880 /* UIViewShadowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676522D21DEE19BD00BDB880 /* UIViewShadowExtension.swift */; };
 		6797D3FA1DCE1F5A00DD4587 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6797D3F91DCE1F5A00DD4587 /* GoogleService-Info.plist */; };
 		6797D3FE1DCE2F1900DD4587 /* FDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6797D3FD1DCE2F1900DD4587 /* FDUser.swift */; };
 		6797D4011DCE35F800DD4587 /* FIRDataSnapshot+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6797D4001DCE35F800DD4587 /* FIRDataSnapshot+JSON.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		676522D01DEDFA3400BDB880 /* Fooderoso-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fooderoso-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		676522D21DEE19BD00BDB880 /* UIViewShadowExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewShadowExtension.swift; sourceTree = "<group>"; };
 		6797D3F91DCE1F5A00DD4587 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6797D3FD1DCE2F1900DD4587 /* FDUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDUser.swift; sourceTree = "<group>"; };
 		6797D4001DCE35F800DD4587 /* FIRDataSnapshot+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FIRDataSnapshot+JSON.swift"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		6797D3FF1DCE35BA00DD4587 /* Custom Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				676522D21DEE19BD00BDB880 /* UIViewShadowExtension.swift */,
 				6797D4001DCE35F800DD4587 /* FIRDataSnapshot+JSON.swift */,
 			);
 			name = "Custom Extensions";
@@ -381,6 +384,7 @@
 				D44C6D641DCBA189006DB663 /* AppDelegate.swift in Sources */,
 				D44C6D6C1DCBA189006DB663 /* Fooderoso.xcdatamodeld in Sources */,
 				67F56C7D1DE24763001AAD0F /* FooderosoNotifications.swift in Sources */,
+				676522D31DEE19BD00BDB880 /* UIViewShadowExtension.swift in Sources */,
 				D44C6D831DCBDBC9006DB663 /* TagsCellCollection.swift in Sources */,
 				67F56C751DE2335D001AAD0F /* FooderosoManager.swift in Sources */,
 				D48861C61DE2132D00B5DD2F /* ChatViewController.swift in Sources */,
