@@ -18,6 +18,7 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var talkSellerView: UIButton!
     @IBOutlet weak var photoUser: UIImageView!
     @IBOutlet weak var photoProduct: UIImageView!
+    @IBOutlet var nameProduct: UILabel!
     
     //-----
     //Infos
@@ -40,7 +41,7 @@ class ProductDetailViewController: UIViewController {
     }
     
     func loadInfo() {
-        self.nameLabel.text = self.currentProduct.name
+        self.nameProduct.text = self.currentProduct.name
         self.photoProduct.image = self.currentProduct.photo
     }
     
