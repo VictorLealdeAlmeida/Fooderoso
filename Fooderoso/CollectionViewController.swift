@@ -10,6 +10,10 @@ import UIKit
 
 class CollectionViewController: BaseViewController {
     
+    @IBOutlet var productsCollection: UICollectionView!
+    
+    var activityIndicador: UIActivityIndicatorView?
+    
     var items = ["1", "2", "3", "4", "5", "6", "7", "8"]
     var imagesItems = ["feijoada", "briga", "porco", "sunny", "feijoada", "briga", "porco", "sunny"]
     var indexSegue = 0
@@ -17,6 +21,7 @@ class CollectionViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.getProducts()
     }
     
     override func didReceiveMemoryWarning() {
@@ -25,48 +30,84 @@ class CollectionViewController: BaseViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "HomeToProduct"){
-            var result:ProductDetailViewController = ProductDetailViewController()
-            result = (segue.destination as? ProductDetailViewController)!
-            
-            result.imageName = imagesItems[indexSegue]
+        if let vc = segue.destination as? ProductDetailViewController, let product = sender as? FDProduct {
+            vc.currentProduct = product
         }
         
     }
+    
+    func getProducts() {
+        NotificationCenter.default.addObserver(self, selector: #selector(CollectionViewController.productsLoaded(notification:)), name: FDNotification.noProductsFound, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CollectionViewController.productsLoaded(notification:)), name: FDNotification.productsFound, object: nil)
+        
+        self.toggleLoading()
+        self.manager.getProducts()
+    }
+    
+    func toggleLoading() {
+        if self.activityIndicador == nil {
+            // show the loading indicator
+            self.activityIndicador = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+            self.activityIndicador!.center = self.view.center
+            self.activityIndicador!.hidesWhenStopped = true
+            self.activityIndicador!.stopAnimating()
+            self.view.addSubview(self.activityIndicador!)
+            self.activityIndicador!.startAnimating()
+            return
+        }
+        
+        // remove the loading indicator
+        self.activityIndicador!.stopAnimating()
+        self.activityIndicador!.removeFromSuperview()
+        self.activityIndicador = nil
+    }
 
+}
+
+// Notification Listeners
+extension CollectionViewController {
+    func productsLoaded(notification: Notification) {
+        if self.activityIndicador != nil {
+            self.toggleLoading()
+        }
+        
+        if self.manager.productsOnSale.count == 0 {
+            // display an empty state view
+            self.productsCollection.isHidden = true
+            return
+        }
+        self.productsCollection.isHidden = false
+        self.productsCollection.reloadData()
+    }
 }
 
 extension CollectionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //         return self.manager.productsOnSale.count
-        return self.items.count
+        return self.manager.productsOnSale.count
     }
     
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! CellCollection
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath as IndexPath) as! CellCollection
         
-        cell.productImage.image = UIImage(named: imagesItems[(indexPath as NSIndexPath).row])!
-        cell.productText.text = "Nome da imagem " + items[(indexPath as NSIndexPath).row]
-        
+        let product = self.manager.productsOnSale[indexPath.row]
+        cell.configWithProduct(product: product)
+
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         print("You selected cell #\(indexPath.item)!")
-        indexSegue = indexPath.item
-        performSegue(withIdentifier: "HomeToProduct", sender: nil)
+        
+        let product = self.manager.productsOnSale[indexPath.row]
+        performSegue(withIdentifier: "HomeToProduct", sender: product)
     }
     
     //DelegateFlowLayout
-    /*func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize.zero
-    }*/
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.size.width - 50) / 2.0
         let height = width

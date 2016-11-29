@@ -24,7 +24,8 @@ class ProductDetailViewController: UIViewController {
     //-----
 
     var placesClient: GMSPlacesClient?
-    var imageName : String = ""
+//    var imageName : String = ""
+    var currentProduct: FDProduct!
 
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
@@ -35,8 +36,12 @@ class ProductDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
    
-        photoProduct.image = UIImage(named: imageName)
-        
+        self.loadInfo()
+    }
+    
+    func loadInfo() {
+        self.nameLabel.text = self.currentProduct.name
+        self.photoProduct.image = self.currentProduct.photo
     }
     
     override func viewDidAppear(_ animated: Bool) {

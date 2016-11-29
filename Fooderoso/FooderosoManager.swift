@@ -108,14 +108,16 @@ class FooderosoManager: NSObject {
             
             self.productsOnSale = []
             for (key, productJSON) in productsJSON.dictionaryValue {
-                if productJSON["seller"].stringValue == self.currentUser!.id! {
-                    continue
-                }
+//                if productJSON["seller"].stringValue == self.currentUser!.id! {
+//                    continue
+//                }
                 print(productJSON)
                 print(key)
                 let newProduct = FDProduct(withId: key, andJSON: productJSON)
                 self.productsOnSale.append(newProduct)
             }
+            
+            NotificationCenter.default.post(name: FDNotification.productsFound, object: nil)
             
         }, withCancel: {error in
             print("FAILURE: something went wrong while trying to get the products")
