@@ -22,7 +22,10 @@ class StoreViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController!.popViewController(animated: true)
+    }
+   
 }
 
 //--------------------------------------------//
@@ -60,5 +63,7 @@ extension StoreViewController: UICollectionViewDataSource, UICollectionViewDeleg
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
     }
+    
+    
     
 }

@@ -16,11 +16,13 @@ class ProductDetailViewController: UIViewController {
  
     @IBOutlet weak var talkSellerView: UIButton!
     @IBOutlet weak var photoUser: UIImageView!
+    @IBOutlet weak var photoProduct: UIImageView!
     
-    //------
-    //Labels
-    //------
+    //-----
+    //Infos
+    //-----
 
+    var imageName : String = ""
     
     
     //Conteudo pras tags, modificar pra antender o back-end
@@ -29,7 +31,7 @@ class ProductDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        photoProduct.image = UIImage(named: imageName)
         
     }
     
@@ -50,6 +52,10 @@ class ProductDetailViewController: UIViewController {
 
     }
     
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController!.popViewController(animated: true)
+        
+    }
     
 }
 
