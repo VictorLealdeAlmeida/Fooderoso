@@ -53,7 +53,7 @@ extension AddProductViewController: UICollectionViewDataSource, UICollectionView
         let selectedCell:UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
         selectedCell.contentView.backgroundColor = UIColor(red:0.95, green:0.51, blue:0.36, alpha:1.00)
         
-        selectedCell.
+      //  selectedCell.
         
         
         
