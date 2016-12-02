@@ -119,9 +119,9 @@ class ProductDetailViewController: UIViewController {
     
 }
 
-//--------------------------------------------//
-//Extesion para cuidado do Collection das tags//
-//--------------------------------------------//
+//-------------------------------------------//
+//Extesion para cuidar do Collection das tags//
+//-------------------------------------------//
 
 extension ProductDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
