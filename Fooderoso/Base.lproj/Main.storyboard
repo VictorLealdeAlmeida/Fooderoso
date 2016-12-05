@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Xhh-gk-cll">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hhv-CA-bV0">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -148,7 +148,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="Xhh-gk-cll" kind="show" identifier="StoreToAdd" id="9mh-38-INy"/>
+                        <segue destination="Xhh-gk-cll" kind="show" identifier="StoreToAdd" id="Etm-fp-Y14"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fi8-9P-6lB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -167,29 +167,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hSu-9B-F4h">
-                                <rect key="frame" x="25" y="39" width="270" height="30"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cjh-NF-vwM">
+                                <rect key="frame" x="0.0" y="68" width="320" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UsD-aa-uZ8">
-                                <rect key="frame" x="25" y="89" width="270" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, s" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kz0-wl-gNk">
-                                <rect key="frame" x="25" y="138" width="270" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome da sua delícia" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hSu-9B-F4h">
+                                        <rect key="frame" x="15" y="9" width="291" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rgE-cS-w2r">
-                                <rect key="frame" x="0.0" y="281" width="320" height="142"/>
+                                <rect key="frame" x="0.0" y="342" width="320" height="142"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -237,13 +230,74 @@
                                     <outlet property="delegate" destination="Xhh-gk-cll" id="Eaw-XK-IVe"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UNg-iU-QNM">
+                                <rect key="frame" x="0.0" y="131" width="320" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Valor" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXc-4O-0uY">
+                                        <rect key="frame" x="50" y="6" width="256" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="R$" placeholder="Nome da sua delícia" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WNB-cW-1rn">
+                                        <rect key="frame" x="19" y="6" width="26" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vlr-vj-Cxf">
+                                <rect key="frame" x="0.0" y="188" width="320" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Descrição marota da sua guloseima" translatesAutoresizingMaskIntoConstraints="NO" id="kz0-wl-gNk">
+                                        <rect key="frame" x="17" y="5" width="287" height="123"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vj9-hR-fVI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Add Product" id="mr4-Rt-Dfl">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="P1T-dN-P2k">
+                                            <connections>
+                                                <action selector="cancel:" destination="Xhh-gk-cll" id="r0i-gf-GJa"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="oQ8-ha-8Q8">
+                                            <connections>
+                                                <action selector="done:" destination="Xhh-gk-cll" id="Di8-bi-WNS"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Rd6-v6-q9Y"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="descripton" destination="kz0-wl-gNk" id="euS-gp-fai"/>
+                        <outlet property="nameText" destination="hSu-9B-F4h" id="ynQ-uk-2Ot"/>
+                        <outlet property="valueText" destination="vXc-4O-0uY" id="2Ox-Eh-i7V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9i-jx-gVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="980.625" y="-555.63380281690138"/>
+            <point key="canvasLocation" x="992" y="-555"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -264,13 +318,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Se liga nas sugestões de guloseimas ao seu redor" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3Y-6a-E7A">
-                                <rect key="frame" x="19" y="119" width="282" height="41"/>
+                                <rect key="frame" x="19" y="119" width="282" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c34-hE-Sv0">
-                                <rect key="frame" x="0.0" y="168" width="320" height="400"/>
+                                <rect key="frame" x="0.0" y="147.5" width="320" height="420.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J9r-Lc-ESs">
                                     <size key="itemSize" width="134" height="136"/>
@@ -362,7 +416,7 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FOODEROSO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dew-Mv-PSm">
-                                <rect key="frame" x="107" y="24" width="107" height="21"/>
+                                <rect key="frame" x="106.5" y="24" width="107" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -627,7 +681,7 @@
         <scene sceneID="pQD-4K-4rO">
             <objects>
                 <navigationController navigationBarHidden="YES" id="Hhv-CA-bV0" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Mkh-1O-J7C">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mkh-1O-J7C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

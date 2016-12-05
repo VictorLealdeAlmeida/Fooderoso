@@ -10,6 +10,11 @@ import UIKit
 
 class AddProductViewController: UIViewController {
     
+    @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var valueText: UITextField!
+    @IBOutlet weak var descripton: UITextView!
+    
+    
     var tags = ["#Doce", "#Salgado", "#Chocolate", "#Espacial", "#Bebida"]
     
     override func viewDidLoad() {
@@ -21,6 +26,15 @@ class AddProductViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func done(_ sender: Any) {
+        self.navigationController!.popViewController(animated: true)
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+        self.navigationController!.popViewController(animated: true)
+    }
+    
     
     
 }
