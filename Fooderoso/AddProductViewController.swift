@@ -29,6 +29,12 @@ class AddProductViewController: UIViewController {
     
     @IBAction func done(_ sender: Any) {
         self.navigationController!.popViewController(animated: true)
+        
+        print(nameText.text)
+        print(valueText.text)
+        print(descripton.text)
+        
+        
     }
     
     @IBAction func cancel(_ sender: Any) {

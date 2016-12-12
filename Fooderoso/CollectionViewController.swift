@@ -11,6 +11,7 @@ import UIKit
 class CollectionViewController: BaseViewController {
     
     @IBOutlet var productsCollection: UICollectionView!
+    @IBOutlet weak var photoUser: UIImageView!
     
     var activityIndicador: UIActivityIndicatorView?
     
@@ -22,6 +23,13 @@ class CollectionViewController: BaseViewController {
         super.viewDidLoad()
         
         self.getProducts()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        photoUser.layer.cornerRadius = photoUser.bounds.height/2;
+        photoUser.clipsToBounds = true
+        photoUser.layer.borderColor = UIColor(red:0.97, green:0.25, blue:0.47, alpha:1.00).cgColor
+        photoUser.layer.borderWidth = 1
     }
     
     override func didReceiveMemoryWarning() {
