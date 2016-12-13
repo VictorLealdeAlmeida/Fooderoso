@@ -1,1479 +1,610 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>1274601A923270B01887DF9B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Fooderoso/Pods-Fooderoso-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>1725248A38AC4DECD6D547C7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Fooderoso/Pods-Fooderoso-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>2C6CDEBEF8A34E6A8B4F12D7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>36C49152922E6A2FAADECE94</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Fooderoso/Pods-Fooderoso-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>41D46427029706E890A90CBB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>EF0D4A897C3158B80047C114</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5E971393719DFC982266A25E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [ $? != 0 ] ; then
-    # print error to STDERR
-    echo "error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation." &gt;&amp;2
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>676522D01DEDFA3400BDB880</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Fooderoso-Bridging-Header.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>676522D21DEE19BD00BDB880</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>UIViewShadowExtension.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>676522D31DEE19BD00BDB880</key>
-		<dict>
-			<key>fileRef</key>
-			<string>676522D21DEE19BD00BDB880</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>676522D41DEE1F6D00BDB880</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>path</key>
-			<string>Login.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>676522D51DEE1F6D00BDB880</key>
-		<dict>
-			<key>fileRef</key>
-			<string>676522D41DEE1F6D00BDB880</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>676522D61DEE1FC400BDB880</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>LoadingViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>676522D71DEE1FC400BDB880</key>
-		<dict>
-			<key>fileRef</key>
-			<string>676522D61DEE1FC400BDB880</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6797D3F91DCE1F5A00DD4587</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>GoogleService-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6797D3FA1DCE1F5A00DD4587</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6797D3F91DCE1F5A00DD4587</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6797D3FB1DCE216500DD4587</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>67F56C741DE2335D001AAD0F</string>
-				<string>67F56C7C1DE24763001AAD0F</string>
-				<string>6797D3FC1DCE217700DD4587</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>App Logic</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6797D3FC1DCE217700DD4587</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6797D3FD1DCE2F1900DD4587</string>
-				<string>6797D4021DCE3C3B00DD4587</string>
-				<string>67F56CAC1DE26274001AAD0F</string>
-				<string>6797D4061DCE3DAC00DD4587</string>
-				<string>67F56C701DE22F36001AAD0F</string>
-				<string>67F56C721DE22FB4001AAD0F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Entities</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6797D3FD1DCE2F1900DD4587</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>FDUser.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6797D3FE1DCE2F1900DD4587</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6797D3FD1DCE2F1900DD4587</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6797D3FF1DCE35BA00DD4587</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>676522D21DEE19BD00BDB880</string>
-				<string>6797D4001DCE35F800DD4587</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Custom Extensions</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6797D4001DCE35F800DD4587</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>FIRDataSnapshot+JSON.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6797D4011DCE35F800DD4587</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6797D4001DCE35F800DD4587</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6797D4021DCE3C3B00DD4587</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>DFProduct.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6797D4031DCE3C3B00DD4587</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6797D4021DCE3C3B00DD4587</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6797D4061DCE3DAC00DD4587</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>FDProductTag.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6797D4071DCE3DAC00DD4587</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6797D4061DCE3DAC00DD4587</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>67F56C701DE22F36001AAD0F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>FDChatRoom.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>67F56C711DE22F36001AAD0F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>67F56C701DE22F36001AAD0F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>67F56C721DE22FB4001AAD0F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>FDChatMessage.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>67F56C731DE22FB4001AAD0F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>67F56C721DE22FB4001AAD0F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>67F56C741DE2335D001AAD0F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>FooderosoManager.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>67F56C751DE2335D001AAD0F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>67F56C741DE2335D001AAD0F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>67F56C761DE23F6C001AAD0F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>BaseViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>67F56C771DE23F6C001AAD0F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>67F56C761DE23F6C001AAD0F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>67F56C781DE24002001AAD0F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>TestViewController.swift</string>
-			<key>path</key>
-			<string>Assets.xcassets/TestViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>67F56C791DE24002001AAD0F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>67F56C781DE24002001AAD0F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>67F56C7A1DE24067001AAD0F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>path</key>
-			<string>Test.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>67F56C7B1DE24067001AAD0F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>67F56C7A1DE24067001AAD0F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>67F56C7C1DE24763001AAD0F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>FooderosoNotifications.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>67F56C7D1DE24763001AAD0F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>67F56C7C1DE24763001AAD0F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>67F56CAC1DE26274001AAD0F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>FDUserStore.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>67F56CAD1DE26274001AAD0F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>67F56CAC1DE26274001AAD0F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>703653FE345C6DC2E9927EDE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Fooderoso.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Fooderoso/Pods-Fooderoso.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>78BA05FC3E66389A8BAD9EDC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>703653FE345C6DC2E9927EDE</string>
-				<string>BA2CDF7E0337FC2DDDDE4AAB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>88116C37A1E617D8E4A4F1F8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [ $? != 0 ] ; then
-    # print error to STDERR
-    echo "error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation." &gt;&amp;2
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>BA2CDF7E0337FC2DDDDE4AAB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Fooderoso.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Fooderoso/Pods-Fooderoso.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB9E0CF7F229BEF11D43D57B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>&#128230; Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Fooderoso/Pods-Fooderoso-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>D43DC9CC1DEE130800CA8935</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AddProductViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D43DC9CD1DEE130800CA8935</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D43DC9CC1DEE130800CA8935</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D44C6D571DCBA189006DB663</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D44C6D621DCBA189006DB663</string>
-				<string>D44C6D611DCBA189006DB663</string>
-				<string>78BA05FC3E66389A8BAD9EDC</string>
-				<string>41D46427029706E890A90CBB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D581DCBA189006DB663</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0810</string>
-				<key>LastUpgradeCheck</key>
-				<string>0810</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>AlunosDeKiev</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>D44C6D5F1DCBA189006DB663</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>8.1</string>
-						<key>DevelopmentTeam</key>
-						<string>A975LQD622</string>
-						<key>ProvisioningStyle</key>
-						<string>Automatic</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>D44C6D5B1DCBA189006DB663</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>D44C6D571DCBA189006DB663</string>
-			<key>productRefGroup</key>
-			<string>D44C6D611DCBA189006DB663</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>D44C6D5F1DCBA189006DB663</string>
-			</array>
-		</dict>
-		<key>D44C6D5B1DCBA189006DB663</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>D44C6D731DCBA189006DB663</string>
-				<string>D44C6D741DCBA189006DB663</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>D44C6D5C1DCBA189006DB663</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>6797D4071DCE3DAC00DD4587</string>
-				<string>6797D3FE1DCE2F1900DD4587</string>
-				<string>D44C6D7D1DCBB212006DB663</string>
-				<string>D44C6D7B1DCBACFE006DB663</string>
-				<string>6797D4011DCE35F800DD4587</string>
-				<string>D44C6D661DCBA189006DB663</string>
-				<string>67F56C711DE22F36001AAD0F</string>
-				<string>67F56C771DE23F6C001AAD0F</string>
-				<string>D48861C81DE2139C00B5DD2F</string>
-				<string>6797D4031DCE3C3B00DD4587</string>
-				<string>D43DC9CD1DEE130800CA8935</string>
-				<string>D44C6D641DCBA189006DB663</string>
-				<string>D44C6D6C1DCBA189006DB663</string>
-				<string>676522D71DEE1FC400BDB880</string>
-				<string>67F56C7D1DE24763001AAD0F</string>
-				<string>676522D31DEE19BD00BDB880</string>
-				<string>D44C6D831DCBDBC9006DB663</string>
-				<string>67F56C751DE2335D001AAD0F</string>
-				<string>D48861C61DE2132D00B5DD2F</string>
-				<string>67F56CAD1DE26274001AAD0F</string>
-				<string>67F56C731DE22FB4001AAD0F</string>
-				<string>67F56C791DE24002001AAD0F</string>
-				<string>D44C6D811DCBD247006DB663</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>D44C6D5D1DCBA189006DB663</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>FA5B7B86C6713112ACC5089C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>D44C6D5E1DCBA189006DB663</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>D44C6D711DCBA189006DB663</string>
-				<string>6797D3FA1DCE1F5A00DD4587</string>
-				<string>676522D51DEE1F6D00BDB880</string>
-				<string>D44C6D6E1DCBA189006DB663</string>
-				<string>D44C6D691DCBA189006DB663</string>
-				<string>67F56C7B1DE24067001AAD0F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>D44C6D5F1DCBA189006DB663</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>D44C6D751DCBA189006DB663</string>
-			<key>buildPhases</key>
-			<array>
-				<string>2C6CDEBEF8A34E6A8B4F12D7</string>
-				<string>88116C37A1E617D8E4A4F1F8</string>
-				<string>5E971393719DFC982266A25E</string>
-				<string>D44C6D5C1DCBA189006DB663</string>
-				<string>D44C6D5D1DCBA189006DB663</string>
-				<string>D44C6D5E1DCBA189006DB663</string>
-				<string>1725248A38AC4DECD6D547C7</string>
-				<string>36C49152922E6A2FAADECE94</string>
-				<string>CB9E0CF7F229BEF11D43D57B</string>
-				<string>1274601A923270B01887DF9B</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Fooderoso</string>
-			<key>productName</key>
-			<string>Fooderoso</string>
-			<key>productReference</key>
-			<string>D44C6D601DCBA189006DB663</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>D44C6D601DCBA189006DB663</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Fooderoso.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>D44C6D611DCBA189006DB663</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D44C6D601DCBA189006DB663</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D621DCBA189006DB663</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>676522D01DEDFA3400BDB880</string>
-				<string>6797D3FB1DCE216500DD4587</string>
-				<string>6797D3FF1DCE35BA00DD4587</string>
-				<string>D44C6D631DCBA189006DB663</string>
-				<string>D44C6D651DCBA189006DB663</string>
-				<string>67F56C781DE24002001AAD0F</string>
-				<string>67F56C7A1DE24067001AAD0F</string>
-				<string>D44C6D781DCBA1A7006DB663</string>
-				<string>D44C6D7F1DCBB249006DB663</string>
-				<string>D44C6D671DCBA189006DB663</string>
-				<string>676522D41DEE1F6D00BDB880</string>
-				<string>D44C6D6D1DCBA189006DB663</string>
-				<string>D44C6D6F1DCBA189006DB663</string>
-				<string>D44C6D721DCBA189006DB663</string>
-				<string>6797D3F91DCE1F5A00DD4587</string>
-				<string>D44C6D6A1DCBA189006DB663</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Fooderoso</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D631DCBA189006DB663</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AppDelegate.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D641DCBA189006DB663</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D44C6D631DCBA189006DB663</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D44C6D651DCBA189006DB663</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D661DCBA189006DB663</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D44C6D651DCBA189006DB663</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D44C6D671DCBA189006DB663</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D44C6D681DCBA189006DB663</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D681DCBA189006DB663</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D691DCBA189006DB663</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D44C6D671DCBA189006DB663</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D44C6D6A1DCBA189006DB663</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D44C6D6B1DCBA189006DB663</string>
-			</array>
-			<key>currentVersion</key>
-			<string>D44C6D6B1DCBA189006DB663</string>
-			<key>isa</key>
-			<string>XCVersionGroup</string>
-			<key>path</key>
-			<string>Fooderoso.xcdatamodeld</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-			<key>versionGroupType</key>
-			<string>wrapper.xcdatamodel</string>
-		</dict>
-		<key>D44C6D6B1DCBA189006DB663</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.xcdatamodel</string>
-			<key>path</key>
-			<string>Fooderoso.xcdatamodel</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D6C1DCBA189006DB663</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D44C6D6A1DCBA189006DB663</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D44C6D6D1DCBA189006DB663</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D6E1DCBA189006DB663</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D44C6D6D1DCBA189006DB663</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D44C6D6F1DCBA189006DB663</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D44C6D701DCBA189006DB663</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D701DCBA189006DB663</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D711DCBA189006DB663</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D44C6D6F1DCBA189006DB663</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D44C6D721DCBA189006DB663</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D731DCBA189006DB663</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INFINITE_RECURSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_SUSPICIOUS_MOVES</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.1</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_ACTIVE_COMPILATION_CONDITIONS</key>
-				<string>DEBUG</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>D44C6D741DCBA189006DB663</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INFINITE_RECURSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_SUSPICIOUS_MOVES</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.1</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Owholemodule</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>D44C6D751DCBA189006DB663</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>D44C6D761DCBA189006DB663</string>
-				<string>D44C6D771DCBA189006DB663</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>D44C6D761DCBA189006DB663</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>703653FE345C6DC2E9927EDE</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>DEVELOPMENT_TEAM</key>
-				<string>A975LQD622</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Fooderoso/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>br.ufpe.cin.fooderoso</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
-				<string>Fooderoso-Bridging-Header.h</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>D44C6D771DCBA189006DB663</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>BA2CDF7E0337FC2DDDDE4AAB</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>DEVELOPMENT_TEAM</key>
-				<string>A975LQD622</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Fooderoso/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>br.ufpe.cin.fooderoso</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
-				<string>Fooderoso-Bridging-Header.h</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>D44C6D781DCBA1A7006DB663</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>67F56C761DE23F6C001AAD0F</string>
-				<string>676522D61DEE1FC400BDB880</string>
-				<string>D44C6D7A1DCBACFE006DB663</string>
-				<string>D48861C51DE2132D00B5DD2F</string>
-				<string>D48861C71DE2139C00B5DD2F</string>
-				<string>D44C6D801DCBD247006DB663</string>
-				<string>D43DC9CC1DEE130800CA8935</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>ViewController</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D7A1DCBACFE006DB663</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>CollectionViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D7B1DCBACFE006DB663</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D44C6D7A1DCBACFE006DB663</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D44C6D7C1DCBB212006DB663</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>CellCollection.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D7D1DCBB212006DB663</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D44C6D7C1DCBB212006DB663</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D44C6D7F1DCBB249006DB663</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D44C6D7C1DCBB212006DB663</string>
-				<string>D44C6D821DCBDBC9006DB663</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Model</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D801DCBD247006DB663</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ProductDetailViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D811DCBD247006DB663</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D44C6D801DCBD247006DB663</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D44C6D821DCBDBC9006DB663</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>TagsCellCollection.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D44C6D831DCBDBC9006DB663</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D44C6D821DCBDBC9006DB663</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D48861C51DE2132D00B5DD2F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ChatViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D48861C61DE2132D00B5DD2F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D48861C51DE2132D00B5DD2F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D48861C71DE2139C00B5DD2F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>StoreViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D48861C81DE2139C00B5DD2F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D48861C71DE2139C00B5DD2F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>EF0D4A897C3158B80047C114</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_Fooderoso.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>FA5B7B86C6713112ACC5089C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>EF0D4A897C3158B80047C114</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>D44C6D581DCBA189006DB663</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		676522D31DEE19BD00BDB880 /* UIViewShadowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676522D21DEE19BD00BDB880 /* UIViewShadowExtension.swift */; };
+		676522D51DEE1F6D00BDB880 /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 676522D41DEE1F6D00BDB880 /* Loading.storyboard */; };
+		676522D71DEE1FC400BDB880 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676522D61DEE1FC400BDB880 /* LoadingViewController.swift */; };
+		6797D3FA1DCE1F5A00DD4587 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6797D3F91DCE1F5A00DD4587 /* GoogleService-Info.plist */; };
+		6797D3FE1DCE2F1900DD4587 /* FDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6797D3FD1DCE2F1900DD4587 /* FDUser.swift */; };
+		6797D4011DCE35F800DD4587 /* FIRDataSnapshot+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6797D4001DCE35F800DD4587 /* FIRDataSnapshot+JSON.swift */; };
+		6797D4031DCE3C3B00DD4587 /* DFProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6797D4021DCE3C3B00DD4587 /* DFProduct.swift */; };
+		6797D4071DCE3DAC00DD4587 /* FDProductTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6797D4061DCE3DAC00DD4587 /* FDProductTag.swift */; };
+		67D778B11E0061B60048BED5 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67D778B01E0061B60048BED5 /* Chat.storyboard */; };
+		67F56C711DE22F36001AAD0F /* FDChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F56C701DE22F36001AAD0F /* FDChatRoom.swift */; };
+		67F56C731DE22FB4001AAD0F /* FDChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F56C721DE22FB4001AAD0F /* FDChatMessage.swift */; };
+		67F56C751DE2335D001AAD0F /* FooderosoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F56C741DE2335D001AAD0F /* FooderosoManager.swift */; };
+		67F56C771DE23F6C001AAD0F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F56C761DE23F6C001AAD0F /* BaseViewController.swift */; };
+		67F56C791DE24002001AAD0F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F56C781DE24002001AAD0F /* TestViewController.swift */; };
+		67F56C7B1DE24067001AAD0F /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F56C7A1DE24067001AAD0F /* Test.storyboard */; };
+		67F56C7D1DE24763001AAD0F /* FooderosoNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F56C7C1DE24763001AAD0F /* FooderosoNotifications.swift */; };
+		67F56CAD1DE26274001AAD0F /* FDUserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F56CAC1DE26274001AAD0F /* FDUserStore.swift */; };
+		D43DC9CD1DEE130800CA8935 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DC9CC1DEE130800CA8935 /* AddProductViewController.swift */; };
+		D44C6D641DCBA189006DB663 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C6D631DCBA189006DB663 /* AppDelegate.swift */; };
+		D44C6D661DCBA189006DB663 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C6D651DCBA189006DB663 /* ViewController.swift */; };
+		D44C6D691DCBA189006DB663 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44C6D671DCBA189006DB663 /* Main.storyboard */; };
+		D44C6D6C1DCBA189006DB663 /* Fooderoso.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D44C6D6A1DCBA189006DB663 /* Fooderoso.xcdatamodeld */; };
+		D44C6D6E1DCBA189006DB663 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44C6D6D1DCBA189006DB663 /* Assets.xcassets */; };
+		D44C6D711DCBA189006DB663 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44C6D6F1DCBA189006DB663 /* LaunchScreen.storyboard */; };
+		D44C6D7B1DCBACFE006DB663 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C6D7A1DCBACFE006DB663 /* CollectionViewController.swift */; };
+		D44C6D7D1DCBB212006DB663 /* CellCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C6D7C1DCBB212006DB663 /* CellCollection.swift */; };
+		D44C6D811DCBD247006DB663 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C6D801DCBD247006DB663 /* ProductDetailViewController.swift */; };
+		D44C6D831DCBDBC9006DB663 /* TagsCellCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C6D821DCBDBC9006DB663 /* TagsCellCollection.swift */; };
+		D48861C61DE2132D00B5DD2F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48861C51DE2132D00B5DD2F /* ChatViewController.swift */; };
+		D48861C81DE2139C00B5DD2F /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48861C71DE2139C00B5DD2F /* StoreViewController.swift */; };
+		FA5B7B86C6713112ACC5089C /* Pods_Fooderoso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0D4A897C3158B80047C114 /* Pods_Fooderoso.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		676522D01DEDFA3400BDB880 /* Fooderoso-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fooderoso-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		676522D21DEE19BD00BDB880 /* UIViewShadowExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewShadowExtension.swift; sourceTree = "<group>"; };
+		676522D41DEE1F6D00BDB880 /* Loading.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Loading.storyboard; sourceTree = "<group>"; };
+		676522D61DEE1FC400BDB880 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		6797D3F91DCE1F5A00DD4587 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6797D3FD1DCE2F1900DD4587 /* FDUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDUser.swift; sourceTree = "<group>"; };
+		6797D4001DCE35F800DD4587 /* FIRDataSnapshot+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FIRDataSnapshot+JSON.swift"; sourceTree = "<group>"; };
+		6797D4021DCE3C3B00DD4587 /* DFProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFProduct.swift; sourceTree = "<group>"; };
+		6797D4061DCE3DAC00DD4587 /* FDProductTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDProductTag.swift; sourceTree = "<group>"; };
+		67D778B01E0061B60048BED5 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		67F56C701DE22F36001AAD0F /* FDChatRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDChatRoom.swift; sourceTree = "<group>"; };
+		67F56C721DE22FB4001AAD0F /* FDChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDChatMessage.swift; sourceTree = "<group>"; };
+		67F56C741DE2335D001AAD0F /* FooderosoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooderosoManager.swift; sourceTree = "<group>"; };
+		67F56C761DE23F6C001AAD0F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		67F56C781DE24002001AAD0F /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = Assets.xcassets/TestViewController.swift; sourceTree = "<group>"; };
+		67F56C7A1DE24067001AAD0F /* Test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
+		67F56C7C1DE24763001AAD0F /* FooderosoNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooderosoNotifications.swift; sourceTree = "<group>"; };
+		67F56CAC1DE26274001AAD0F /* FDUserStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDUserStore.swift; sourceTree = "<group>"; };
+		703653FE345C6DC2E9927EDE /* Pods-Fooderoso.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fooderoso.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fooderoso/Pods-Fooderoso.debug.xcconfig"; sourceTree = "<group>"; };
+		BA2CDF7E0337FC2DDDDE4AAB /* Pods-Fooderoso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fooderoso.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fooderoso/Pods-Fooderoso.release.xcconfig"; sourceTree = "<group>"; };
+		D43DC9CC1DEE130800CA8935 /* AddProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
+		D44C6D601DCBA189006DB663 /* Fooderoso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fooderoso.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D44C6D631DCBA189006DB663 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D44C6D651DCBA189006DB663 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D44C6D681DCBA189006DB663 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D44C6D6B1DCBA189006DB663 /* Fooderoso.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fooderoso.xcdatamodel; sourceTree = "<group>"; };
+		D44C6D6D1DCBA189006DB663 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D44C6D701DCBA189006DB663 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D44C6D721DCBA189006DB663 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D44C6D7A1DCBACFE006DB663 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		D44C6D7C1DCBB212006DB663 /* CellCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCollection.swift; sourceTree = "<group>"; };
+		D44C6D801DCBD247006DB663 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		D44C6D821DCBDBC9006DB663 /* TagsCellCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsCellCollection.swift; sourceTree = "<group>"; };
+		D48861C51DE2132D00B5DD2F /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		D48861C71DE2139C00B5DD2F /* StoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		EF0D4A897C3158B80047C114 /* Pods_Fooderoso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fooderoso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D44C6D5D1DCBA189006DB663 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA5B7B86C6713112ACC5089C /* Pods_Fooderoso.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		41D46427029706E890A90CBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF0D4A897C3158B80047C114 /* Pods_Fooderoso.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6797D3FB1DCE216500DD4587 /* App Logic */ = {
+			isa = PBXGroup;
+			children = (
+				67F56C741DE2335D001AAD0F /* FooderosoManager.swift */,
+				67F56C7C1DE24763001AAD0F /* FooderosoNotifications.swift */,
+				6797D3FC1DCE217700DD4587 /* Entities */,
+			);
+			name = "App Logic";
+			sourceTree = "<group>";
+		};
+		6797D3FC1DCE217700DD4587 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				6797D3FD1DCE2F1900DD4587 /* FDUser.swift */,
+				6797D4021DCE3C3B00DD4587 /* DFProduct.swift */,
+				67F56CAC1DE26274001AAD0F /* FDUserStore.swift */,
+				6797D4061DCE3DAC00DD4587 /* FDProductTag.swift */,
+				67F56C701DE22F36001AAD0F /* FDChatRoom.swift */,
+				67F56C721DE22FB4001AAD0F /* FDChatMessage.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		6797D3FF1DCE35BA00DD4587 /* Custom Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				676522D21DEE19BD00BDB880 /* UIViewShadowExtension.swift */,
+				6797D4001DCE35F800DD4587 /* FIRDataSnapshot+JSON.swift */,
+			);
+			name = "Custom Extensions";
+			sourceTree = "<group>";
+		};
+		78BA05FC3E66389A8BAD9EDC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				703653FE345C6DC2E9927EDE /* Pods-Fooderoso.debug.xcconfig */,
+				BA2CDF7E0337FC2DDDDE4AAB /* Pods-Fooderoso.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D44C6D571DCBA189006DB663 = {
+			isa = PBXGroup;
+			children = (
+				D44C6D621DCBA189006DB663 /* Fooderoso */,
+				D44C6D611DCBA189006DB663 /* Products */,
+				78BA05FC3E66389A8BAD9EDC /* Pods */,
+				41D46427029706E890A90CBB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D44C6D611DCBA189006DB663 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D44C6D601DCBA189006DB663 /* Fooderoso.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D44C6D621DCBA189006DB663 /* Fooderoso */ = {
+			isa = PBXGroup;
+			children = (
+				676522D01DEDFA3400BDB880 /* Fooderoso-Bridging-Header.h */,
+				6797D3FB1DCE216500DD4587 /* App Logic */,
+				6797D3FF1DCE35BA00DD4587 /* Custom Extensions */,
+				D44C6D631DCBA189006DB663 /* AppDelegate.swift */,
+				D44C6D651DCBA189006DB663 /* ViewController.swift */,
+				67F56C781DE24002001AAD0F /* TestViewController.swift */,
+				67F56C7A1DE24067001AAD0F /* Test.storyboard */,
+				D44C6D781DCBA1A7006DB663 /* ViewController */,
+				D44C6D7F1DCBB249006DB663 /* Model */,
+				D44C6D671DCBA189006DB663 /* Main.storyboard */,
+				67D778B01E0061B60048BED5 /* Chat.storyboard */,
+				676522D41DEE1F6D00BDB880 /* Loading.storyboard */,
+				D44C6D6D1DCBA189006DB663 /* Assets.xcassets */,
+				D44C6D6F1DCBA189006DB663 /* LaunchScreen.storyboard */,
+				D44C6D721DCBA189006DB663 /* Info.plist */,
+				6797D3F91DCE1F5A00DD4587 /* GoogleService-Info.plist */,
+				D44C6D6A1DCBA189006DB663 /* Fooderoso.xcdatamodeld */,
+			);
+			path = Fooderoso;
+			sourceTree = "<group>";
+		};
+		D44C6D781DCBA1A7006DB663 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				67F56C761DE23F6C001AAD0F /* BaseViewController.swift */,
+				676522D61DEE1FC400BDB880 /* LoadingViewController.swift */,
+				D44C6D7A1DCBACFE006DB663 /* CollectionViewController.swift */,
+				D48861C51DE2132D00B5DD2F /* ChatViewController.swift */,
+				D48861C71DE2139C00B5DD2F /* StoreViewController.swift */,
+				D44C6D801DCBD247006DB663 /* ProductDetailViewController.swift */,
+				D43DC9CC1DEE130800CA8935 /* AddProductViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		D44C6D7F1DCBB249006DB663 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D44C6D7C1DCBB212006DB663 /* CellCollection.swift */,
+				D44C6D821DCBDBC9006DB663 /* TagsCellCollection.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D44C6D5F1DCBA189006DB663 /* Fooderoso */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D44C6D751DCBA189006DB663 /* Build configuration list for PBXNativeTarget "Fooderoso" */;
+			buildPhases = (
+				2C6CDEBEF8A34E6A8B4F12D7 /* 📦 Check Pods Manifest.lock */,
+				88116C37A1E617D8E4A4F1F8 /* [CP] Check Pods Manifest.lock */,
+				5E971393719DFC982266A25E /* [CP] Check Pods Manifest.lock */,
+				D44C6D5C1DCBA189006DB663 /* Sources */,
+				D44C6D5D1DCBA189006DB663 /* Frameworks */,
+				D44C6D5E1DCBA189006DB663 /* Resources */,
+				1725248A38AC4DECD6D547C7 /* [CP] Embed Pods Frameworks */,
+				36C49152922E6A2FAADECE94 /* [CP] Copy Pods Resources */,
+				CB9E0CF7F229BEF11D43D57B /* 📦 Embed Pods Frameworks */,
+				1274601A923270B01887DF9B /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fooderoso;
+			productName = Fooderoso;
+			productReference = D44C6D601DCBA189006DB663 /* Fooderoso.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D44C6D581DCBA189006DB663 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = AlunosDeKiev;
+				TargetAttributes = {
+					D44C6D5F1DCBA189006DB663 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = A975LQD622;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D44C6D5B1DCBA189006DB663 /* Build configuration list for PBXProject "fooderoso" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D44C6D571DCBA189006DB663;
+			productRefGroup = D44C6D611DCBA189006DB663 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D44C6D5F1DCBA189006DB663 /* Fooderoso */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D44C6D5E1DCBA189006DB663 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67D778B11E0061B60048BED5 /* Chat.storyboard in Resources */,
+				D44C6D711DCBA189006DB663 /* LaunchScreen.storyboard in Resources */,
+				6797D3FA1DCE1F5A00DD4587 /* GoogleService-Info.plist in Resources */,
+				676522D51DEE1F6D00BDB880 /* Loading.storyboard in Resources */,
+				D44C6D6E1DCBA189006DB663 /* Assets.xcassets in Resources */,
+				D44C6D691DCBA189006DB663 /* Main.storyboard in Resources */,
+				67F56C7B1DE24067001AAD0F /* Test.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1274601A923270B01887DF9B /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fooderoso/Pods-Fooderoso-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1725248A38AC4DECD6D547C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fooderoso/Pods-Fooderoso-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C6CDEBEF8A34E6A8B4F12D7 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		36C49152922E6A2FAADECE94 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fooderoso/Pods-Fooderoso-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E971393719DFC982266A25E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		88116C37A1E617D8E4A4F1F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CB9E0CF7F229BEF11D43D57B /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fooderoso/Pods-Fooderoso-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D44C6D5C1DCBA189006DB663 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6797D4071DCE3DAC00DD4587 /* FDProductTag.swift in Sources */,
+				6797D3FE1DCE2F1900DD4587 /* FDUser.swift in Sources */,
+				D44C6D7D1DCBB212006DB663 /* CellCollection.swift in Sources */,
+				D44C6D7B1DCBACFE006DB663 /* CollectionViewController.swift in Sources */,
+				6797D4011DCE35F800DD4587 /* FIRDataSnapshot+JSON.swift in Sources */,
+				D44C6D661DCBA189006DB663 /* ViewController.swift in Sources */,
+				67F56C711DE22F36001AAD0F /* FDChatRoom.swift in Sources */,
+				67F56C771DE23F6C001AAD0F /* BaseViewController.swift in Sources */,
+				D48861C81DE2139C00B5DD2F /* StoreViewController.swift in Sources */,
+				6797D4031DCE3C3B00DD4587 /* DFProduct.swift in Sources */,
+				D43DC9CD1DEE130800CA8935 /* AddProductViewController.swift in Sources */,
+				D44C6D641DCBA189006DB663 /* AppDelegate.swift in Sources */,
+				D44C6D6C1DCBA189006DB663 /* Fooderoso.xcdatamodeld in Sources */,
+				676522D71DEE1FC400BDB880 /* LoadingViewController.swift in Sources */,
+				67F56C7D1DE24763001AAD0F /* FooderosoNotifications.swift in Sources */,
+				676522D31DEE19BD00BDB880 /* UIViewShadowExtension.swift in Sources */,
+				D44C6D831DCBDBC9006DB663 /* TagsCellCollection.swift in Sources */,
+				67F56C751DE2335D001AAD0F /* FooderosoManager.swift in Sources */,
+				D48861C61DE2132D00B5DD2F /* ChatViewController.swift in Sources */,
+				67F56CAD1DE26274001AAD0F /* FDUserStore.swift in Sources */,
+				67F56C731DE22FB4001AAD0F /* FDChatMessage.swift in Sources */,
+				67F56C791DE24002001AAD0F /* TestViewController.swift in Sources */,
+				D44C6D811DCBD247006DB663 /* ProductDetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D44C6D671DCBA189006DB663 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D44C6D681DCBA189006DB663 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D44C6D6F1DCBA189006DB663 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D44C6D701DCBA189006DB663 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D44C6D731DCBA189006DB663 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D44C6D741DCBA189006DB663 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D44C6D761DCBA189006DB663 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 703653FE345C6DC2E9927EDE /* Pods-Fooderoso.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A975LQD622;
+				INFOPLIST_FILE = Fooderoso/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.fooderoso;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fooderoso-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		D44C6D771DCBA189006DB663 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA2CDF7E0337FC2DDDDE4AAB /* Pods-Fooderoso.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A975LQD622;
+				INFOPLIST_FILE = Fooderoso/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.fooderoso;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fooderoso-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D44C6D5B1DCBA189006DB663 /* Build configuration list for PBXProject "fooderoso" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D44C6D731DCBA189006DB663 /* Debug */,
+				D44C6D741DCBA189006DB663 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D44C6D751DCBA189006DB663 /* Build configuration list for PBXNativeTarget "Fooderoso" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D44C6D761DCBA189006DB663 /* Debug */,
+				D44C6D771DCBA189006DB663 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D44C6D6A1DCBA189006DB663 /* Fooderoso.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D44C6D6B1DCBA189006DB663 /* Fooderoso.xcdatamodel */,
+			);
+			currentVersion = D44C6D6B1DCBA189006DB663 /* Fooderoso.xcdatamodel */;
+			path = Fooderoso.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D44C6D581DCBA189006DB663 /* Project object */;
+}
