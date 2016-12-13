@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        self.window?.tintColor = UIColor(red:0.96, green:0.51, blue:0.31, alpha:1.00)
+        
         GMSPlacesClient.provideAPIKey("AIzaSyDo9e86eANEgkpLLzG8Ds5QLypFf");
         GMSServices.provideAPIKey("AIzaSyDo9e86eANEgkpLLzG8Ds5QLypFf-m0nac")
         

@@ -146,7 +146,7 @@ class FooderosoManager: NSObject {
 
 // private functions
 extension FooderosoManager {
-    func saveNewUser(_ user: FDUser) {
+    fileprivate func saveNewUser(_ user: FDUser) {
         var dict = user.toDict()
         dict["is-selling"] = false
         
@@ -165,7 +165,7 @@ extension FooderosoManager {
         })
     }
     
-    func loadUserInfo() {
+    fileprivate func loadUserInfo() {
         guard let userId = FIRAuth.auth()?.currentUser?.uid else {
             return
         }
