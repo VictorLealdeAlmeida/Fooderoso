@@ -26,10 +26,16 @@ class CollectionViewController: BaseViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool){
         photoUser.layer.cornerRadius = photoUser.bounds.height/2;
         photoUser.clipsToBounds = true
         photoUser.layer.borderColor = UIColor(red:0.97, green:0.25, blue:0.47, alpha:1.00).cgColor
         photoUser.layer.borderWidth = 1
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,6 +75,11 @@ class CollectionViewController: BaseViewController {
         self.activityIndicador!.removeFromSuperview()
         self.activityIndicador = nil
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
 
 }
 
