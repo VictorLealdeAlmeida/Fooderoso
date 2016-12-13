@@ -117,6 +117,15 @@ class ProductDetailViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func pressUser(_ sender: Any) {
+        performSegue(withIdentifier: "DetailToUser", sender: nil)
+        print(92372937)
+    }
+
+    
+    
+    
+    
 }
 
 //-------------------------------------------//

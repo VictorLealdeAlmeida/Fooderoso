@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddProductViewController: UIViewController {
+class AddProductViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var valueText: UITextField!
@@ -25,6 +25,13 @@ class AddProductViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        nameText.delegate = self
+        valueText.delegate = self
+        //descripton.delegate = self
+        
+      //  nameText.returnKeyType = .done
+      //  valueText.returnKeyType = .done
+      //  descripton.returnKeyType = .done
     }
     
     @IBAction func done(_ sender: Any) {
@@ -41,7 +48,10 @@ class AddProductViewController: UIViewController {
         self.navigationController!.popViewController(animated: true)
     }
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.nameText.resignFirstResponder()
+        return true
+    }
     
 }
 
