@@ -61,8 +61,24 @@ extension StoreViewController: UICollectionViewDelegateFlowLayout, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
-        print("You selected cell #\(indexPath.item)!")
-        performSegue(withIdentifier: "StoreToAdd", sender: nil)
+        if((indexPath.row + 1) == self.items.count){
+        
+            print("You selected cell #\(indexPath.item)!")
+            performSegue(withIdentifier: "StoreToAdd", sender: nil)
+                
+        }else{
+            
+            let selectedCell:UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
+            
+            if selectedCell.contentView.alpha != 1{
+                selectedCell.contentView.alpha = 1
+            }else{
+                selectedCell.contentView.alpha = 0.5
+            }
+        }
+        
+        
+        
 
     }
     

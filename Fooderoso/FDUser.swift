@@ -28,9 +28,15 @@ class FDUser: NSObject {
         }
     }
     
+<<<<<<< HEAD
 //    init(withName name: String, description) {
     
 //    }
+=======
+  //  init(withName name: String, description) {
+        
+  //  }
+>>>>>>> 1ea01746a9d0c4ccf9a343771bb0f2b04f88d0b1
     
     override init() {
         self.id = nil
