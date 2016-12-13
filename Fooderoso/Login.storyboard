@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xkr-0j-6q8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="BloggerSans-Bold.ttf">
+            <string>BloggerSans-Bold</string>
+        </array>
+        <array key="BloggerSans-Light.ttf">
+            <string>BloggerSans-Light</string>
+        </array>
+        <array key="BloggerSans.ttf">
+            <string>BloggerSans</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Usuário não logado-->
+        <scene sceneID="iR2-Cs-ntu">
+            <objects>
+                <viewController id="peA-jl-aP1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qtq-AJ-W8p"/>
+                        <viewControllerLayoutGuide type="bottom" id="EyZ-qo-m0K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H1h-sG-xDf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6vp-4c-aAH">
+                                <rect key="frame" x="32" y="531" width="310" height="104"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mk4-ed-cct">
+                                        <rect key="frame" x="0.0" y="0.0" width="310" height="47"/>
+                                        <color key="backgroundColor" red="1" green="0.20027273893356323" blue="0.45219075679779053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="mk4-ed-cct" secondAttribute="height" multiplier="310:47" id="mG8-uJ-nu5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BloggerSans" family="Blogger Sans" pointSize="20"/>
+                                        <state key="normal" title="Cadastrar-se">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.conerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJQ-3j-aky">
+                                        <rect key="frame" x="0.0" y="57" width="310" height="47"/>
+                                        <color key="backgroundColor" red="0.96935218572616577" green="0.50975614786148071" blue="0.28074672818183899" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="BloggerSans" family="Blogger Sans" pointSize="20"/>
+                                        <state key="normal" title="Entrar">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.conerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mk4-ed-cct" firstAttribute="width" secondItem="KJQ-3j-aky" secondAttribute="width" id="Q25-dh-Ko4"/>
+                                    <constraint firstItem="mk4-ed-cct" firstAttribute="height" secondItem="KJQ-3j-aky" secondAttribute="height" id="y0h-4y-7GG"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zlM-8H-J6j">
+                                <rect key="frame" x="32" y="90" width="310" height="421"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9c-fX-qrf">
+                                        <rect key="frame" x="82" y="0.0" width="146" height="70"/>
+                                        <fontDescription key="fontDescription" name="BloggerSans-Bold" family="Blogger Sans" pointSize="50"/>
+                                        <color key="textColor" red="0.23526433110237122" green="0.23531129956245422" blue="0.23526135087013245" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A gente precisa saber quem é você para poder te mostrar tudo!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fm3-B9-on6">
+                                        <rect key="frame" x="17.5" y="85" width="275" height="48"/>
+                                        <fontDescription key="fontDescription" name="BloggerSans" family="Blogger Sans" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oops" translatesAutoresizingMaskIntoConstraints="NO" id="ugW-c5-nbp">
+                                        <rect key="frame" x="104.5" y="148" width="101" height="273"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6vp-4c-aAH" firstAttribute="top" secondItem="zlM-8H-J6j" secondAttribute="bottom" constant="20" id="3Eo-lC-hHc"/>
+                            <constraint firstItem="KJQ-3j-aky" firstAttribute="width" secondItem="H1h-sG-xDf" secondAttribute="height" multiplier="310:667" id="IgQ-fi-TIJ"/>
+                            <constraint firstItem="EyZ-qo-m0K" firstAttribute="top" secondItem="6vp-4c-aAH" secondAttribute="bottom" constant="32" id="cI6-mA-y6H"/>
+                            <constraint firstItem="zlM-8H-J6j" firstAttribute="top" secondItem="qtq-AJ-W8p" secondAttribute="bottom" constant="26" id="m5M-di-ARW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zlM-8H-J6j" secondAttribute="trailing" constant="17" id="qUb-9A-sYv"/>
+                            <constraint firstItem="zlM-8H-J6j" firstAttribute="leading" secondItem="H1h-sG-xDf" secondAttribute="leadingMargin" constant="16" id="ueD-D3-K1c"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Usuário não logado" id="TXg-BH-TXD">
+                        <barButtonItem key="rightBarButtonItem" image="close-btn" id="V4U-Z8-9HA">
+                            <color key="tintColor" red="0.96935218572616577" green="0.50975614786148071" blue="0.28074672818183899" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="0YD-zv-aQH" kind="show" id="eil-iK-NFZ"/>
+                        <segue destination="WOD-nH-lLW" kind="show" id="1Pm-0w-n0n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="azy-R4-ura" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="596" y="228.93553223388307"/>
+        </scene>
+        <!--Criar Perfil-->
+        <scene sceneID="dli-Ib-QYO">
+            <objects>
+                <tableViewController id="WOD-nH-lLW" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="b00-4M-Dqo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection headerTitle="Informações" id="AcA-Ya-QLS">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="828-1M-ypT">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="828-1M-ypT" id="yrJ-TC-GYc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jkd-I6-d83" userLabel="BgView">
+                                                    <rect key="frame" x="0.0" y="5" width="375" height="60"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="3F7-GQ-Z94">
+                                                            <rect key="frame" x="323" y="14" width="32" height="32"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="3F7-GQ-Z94" secondAttribute="height" multiplier="1:1" id="htr-0Z-tfI"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Qual seu nome, jovem?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Haq-J6-89j">
+                                                            <rect key="frame" x="16" y="19.5" width="299" height="21"/>
+                                                            <color key="textColor" red="0.2352643311" green="0.2353112996" blue="0.2352613509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="BloggerSans-Light" family="Blogger Sans" pointSize="21"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.98028594255447388" green="0.98045331239700317" blue="0.98027533292770386" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="3F7-GQ-Z94" firstAttribute="centerY" secondItem="Jkd-I6-d83" secondAttribute="centerY" id="0eq-lO-gNx"/>
+                                                        <constraint firstAttribute="trailing" secondItem="3F7-GQ-Z94" secondAttribute="trailing" constant="20" id="7kN-dB-mNv"/>
+                                                        <constraint firstItem="Haq-J6-89j" firstAttribute="leading" secondItem="Jkd-I6-d83" secondAttribute="leading" constant="16" id="CHP-CQ-K4g"/>
+                                                        <constraint firstItem="3F7-GQ-Z94" firstAttribute="leading" secondItem="Haq-J6-89j" secondAttribute="trailing" constant="8" id="KcW-5D-mXX"/>
+                                                        <constraint firstItem="3F7-GQ-Z94" firstAttribute="width" secondItem="Jkd-I6-d83" secondAttribute="height" multiplier="8:15" id="PJf-ck-cIS"/>
+                                                        <constraint firstItem="Haq-J6-89j" firstAttribute="centerY" secondItem="Jkd-I6-d83" secondAttribute="centerY" id="eYu-RI-xUg"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Jkd-I6-d83" firstAttribute="top" secondItem="yrJ-TC-GYc" secondAttribute="topMargin" constant="-3" id="2az-VH-vIs"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Jkd-I6-d83" secondAttribute="bottom" constant="-3" id="CKf-j7-kS4"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Jkd-I6-d83" secondAttribute="trailing" constant="-8" id="J9p-yN-mtN"/>
+                                                <constraint firstItem="Jkd-I6-d83" firstAttribute="leading" secondItem="yrJ-TC-GYc" secondAttribute="leadingMargin" constant="-8" id="iqM-i2-qda"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="dm8-zl-Ed5">
+                                        <rect key="frame" x="0.0" y="126" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dm8-zl-Ed5" id="BKp-EJ-cBt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bA-jp-JqN" userLabel="BgView">
+                                                    <rect key="frame" x="0.0" y="5" width="375" height="80"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Que tal falar um pouco sobre você?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yC7-Yk-uvd">
+                                                            <rect key="frame" x="8" y="8" width="359" height="64"/>
+                                                            <color key="textColor" red="0.2352643311" green="0.2353112996" blue="0.2352613509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="BloggerSans-Light" family="Blogger Sans" pointSize="15"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140/140" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTA-QY-keK">
+                                                            <rect key="frame" x="330.5" y="61" width="36.5" height="11"/>
+                                                            <fontDescription key="fontDescription" name="BloggerSans" family="Blogger Sans" pointSize="11"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.98028594260000002" green="0.9804533124" blue="0.98027533290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="yC7-Yk-uvd" firstAttribute="top" secondItem="8bA-jp-JqN" secondAttribute="top" constant="8" id="12M-D2-tXY"/>
+                                                        <constraint firstItem="yC7-Yk-uvd" firstAttribute="leading" secondItem="8bA-jp-JqN" secondAttribute="leading" constant="8" id="BnS-5u-3qv"/>
+                                                        <constraint firstItem="NTA-QY-keK" firstAttribute="bottom" secondItem="yC7-Yk-uvd" secondAttribute="bottom" id="ZzB-wb-0bo"/>
+                                                        <constraint firstItem="NTA-QY-keK" firstAttribute="trailing" secondItem="yC7-Yk-uvd" secondAttribute="trailing" id="cto-2p-4Kz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="yC7-Yk-uvd" secondAttribute="trailing" constant="8" id="ikq-3s-OUz"/>
+                                                        <constraint firstAttribute="bottom" secondItem="yC7-Yk-uvd" secondAttribute="bottom" constant="8" id="oxK-cR-MJh"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8bA-jp-JqN" firstAttribute="leading" secondItem="BKp-EJ-cBt" secondAttribute="leadingMargin" constant="-8" id="Ql1-Zl-je8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="8bA-jp-JqN" secondAttribute="bottom" constant="-3" id="d9n-Z9-yga"/>
+                                                <constraint firstItem="8bA-jp-JqN" firstAttribute="top" secondItem="BKp-EJ-cBt" secondAttribute="topMargin" constant="-3" id="mgn-Wv-FBF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="8bA-jp-JqN" secondAttribute="trailing" constant="-8" id="tVh-Qu-slP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Usuário" id="mjS-gM-hVm">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="55" id="1kL-mP-mLr">
+                                        <rect key="frame" x="0.0" y="273" width="375" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1kL-mP-mLr" id="hko-uZ-IWH">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vg7-px-qDZ" userLabel="BgView">
+                                                    <rect key="frame" x="0.0" y="5" width="375" height="45"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1nL-fZ-zqd">
+                                                            <rect key="frame" x="16" y="12" width="50.5" height="21"/>
+                                                            <color key="textColor" red="0.2352643311" green="0.2353112996" blue="0.2352613509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="BloggerSans-Light" family="Blogger Sans" pointSize="21"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.98028594260000002" green="0.9804533124" blue="0.98027533290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="1nL-fZ-zqd" firstAttribute="centerY" secondItem="Vg7-px-qDZ" secondAttribute="centerY" id="5bm-Sg-ioA"/>
+                                                        <constraint firstItem="1nL-fZ-zqd" firstAttribute="leading" secondItem="Vg7-px-qDZ" secondAttribute="leading" constant="16" id="MVV-l5-20C"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Vg7-px-qDZ" firstAttribute="top" secondItem="hko-uZ-IWH" secondAttribute="topMargin" constant="-3" id="1q1-ks-Iz5"/>
+                                                <constraint firstItem="Vg7-px-qDZ" firstAttribute="leading" secondItem="hko-uZ-IWH" secondAttribute="leadingMargin" constant="-8" id="2Bv-gZ-pKN"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Vg7-px-qDZ" secondAttribute="bottom" constant="-3" id="Teh-rN-71P"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Vg7-px-qDZ" secondAttribute="trailing" constant="-8" id="Zwm-fI-gSo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="55" id="6qw-0t-6Pa">
+                                        <rect key="frame" x="0.0" y="328" width="375" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6qw-0t-6Pa" id="hdY-jg-dPe">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Gx-3h-HfE" userLabel="BgView">
+                                                    <rect key="frame" x="0.0" y="5" width="375" height="45"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LPg-Xf-Uz3">
+                                                            <rect key="frame" x="16" y="12" width="55" height="21"/>
+                                                            <color key="textColor" red="0.2352643311" green="0.2353112996" blue="0.2352613509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="BloggerSans-Light" family="Blogger Sans" pointSize="21"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.98028594260000002" green="0.9804533124" blue="0.98027533290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="LPg-Xf-Uz3" firstAttribute="leading" secondItem="1Gx-3h-HfE" secondAttribute="leading" constant="16" id="ZGQ-aW-Pzd"/>
+                                                        <constraint firstItem="LPg-Xf-Uz3" firstAttribute="centerY" secondItem="1Gx-3h-HfE" secondAttribute="centerY" id="pSI-aB-JGM"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1Gx-3h-HfE" firstAttribute="leading" secondItem="hdY-jg-dPe" secondAttribute="leadingMargin" constant="-8" id="5Zn-Hz-AJp"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1Gx-3h-HfE" secondAttribute="bottom" constant="-3" id="9fT-vV-Vec"/>
+                                                <constraint firstItem="1Gx-3h-HfE" firstAttribute="top" secondItem="hdY-jg-dPe" secondAttribute="topMargin" constant="-3" id="XHK-rf-cHh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1Gx-3h-HfE" secondAttribute="trailing" constant="-8" id="ca8-EK-avb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="55" id="Mg3-9t-chm">
+                                        <rect key="frame" x="0.0" y="383" width="375" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mg3-9t-chm" id="1AH-Vy-YMt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Pg-q9-qUU" userLabel="BgView">
+                                                    <rect key="frame" x="0.0" y="5" width="375" height="45"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirmar senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqD-r1-vKc">
+                                                            <rect key="frame" x="16" y="12" width="142" height="21"/>
+                                                            <color key="textColor" red="0.2352643311" green="0.2353112996" blue="0.2352613509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="BloggerSans-Light" family="Blogger Sans" pointSize="21"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.98028594260000002" green="0.9804533124" blue="0.98027533290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="eqD-r1-vKc" firstAttribute="leading" secondItem="8Pg-q9-qUU" secondAttribute="leading" constant="16" id="VsH-aq-SGR"/>
+                                                        <constraint firstItem="eqD-r1-vKc" firstAttribute="centerY" secondItem="8Pg-q9-qUU" secondAttribute="centerY" id="jSo-dL-DTi"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="8Pg-q9-qUU" secondAttribute="bottom" constant="-3" id="Doe-fC-yPK"/>
+                                                <constraint firstItem="8Pg-q9-qUU" firstAttribute="leading" secondItem="1AH-Vy-YMt" secondAttribute="leadingMargin" constant="-8" id="H9N-Up-K2l"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="8Pg-q9-qUU" secondAttribute="trailing" constant="-8" id="WYU-Vx-92p"/>
+                                                <constraint firstItem="8Pg-q9-qUU" firstAttribute="top" secondItem="1AH-Vy-YMt" secondAttribute="topMargin" constant="-3" id="bHi-NC-I9s"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="WOD-nH-lLW" id="0I0-Ye-oaN"/>
+                            <outlet property="delegate" destination="WOD-nH-lLW" id="bgS-rS-cXW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Criar Perfil" id="Nbc-da-5Dd">
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="2dQ-k8-ALY">
+                            <color key="tintColor" red="0.96935218570000004" green="0.50975614790000001" blue="0.28074672820000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="Qrm-9T-Cv8">
+                            <color key="tintColor" red="0.96935218570000004" green="0.50975614790000001" blue="0.28074672820000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aGD-oF-Qva" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="596" y="947.67616191904051"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="zKa-rw-ihy">
+            <objects>
+                <viewController id="0YD-zv-aQH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F3p-6p-MZT"/>
+                        <viewControllerLayoutGuide type="bottom" id="XtV-TH-Axy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WfL-xq-XwZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eua-T5-5pp">
+                                <rect key="frame" x="0.0" y="72" width="375" height="45"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T0D-vv-HXU">
+                                        <rect key="frame" x="15" y="12" width="345" height="21"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="BloggerSans" family="Blogger Sans" pointSize="21"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98028594255447388" green="0.98045331239700317" blue="0.98027533292770386" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="T0D-vv-HXU" firstAttribute="leading" secondItem="eua-T5-5pp" secondAttribute="leading" constant="15" id="RNH-gY-tpR"/>
+                                    <constraint firstItem="T0D-vv-HXU" firstAttribute="centerY" secondItem="eua-T5-5pp" secondAttribute="centerY" id="qXf-ko-r7U"/>
+                                    <constraint firstAttribute="trailing" secondItem="T0D-vv-HXU" secondAttribute="trailing" constant="15" id="xpb-3t-le2"/>
+                                    <constraint firstAttribute="width" secondItem="eua-T5-5pp" secondAttribute="height" multiplier="25:3" id="z4j-ge-he6"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OpC-Vz-EUU">
+                                <rect key="frame" x="0.0" y="122" width="375" height="45"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PjK-1l-YHD">
+                                        <rect key="frame" x="15" y="12.5" width="345" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="BloggerSans" family="Blogger Sans" pointSize="21"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98028594260000002" green="0.9804533124" blue="0.98027533290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OpC-Vz-EUU" secondAttribute="height" multiplier="25:3" id="8Uw-BW-Ok6"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8J-hR-Hew">
+                                <rect key="frame" x="32" y="177" width="310" height="47"/>
+                                <color key="backgroundColor" red="0.96935218570000004" green="0.50975614790000001" blue="0.28074672820000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="x8J-hR-Hew" secondAttribute="height" multiplier="310:47" id="fZ4-Oy-Sbh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BloggerSans" family="Blogger Sans" pointSize="20"/>
+                                <state key="normal" title="Entrar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.conerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OpC-Vz-EUU" firstAttribute="height" secondItem="eua-T5-5pp" secondAttribute="height" id="0DO-fb-ijh"/>
+                            <constraint firstItem="eua-T5-5pp" firstAttribute="leading" secondItem="WfL-xq-XwZ" secondAttribute="leadingMargin" constant="-16" id="1Pl-bI-9CA"/>
+                            <constraint firstItem="x8J-hR-Hew" firstAttribute="top" secondItem="OpC-Vz-EUU" secondAttribute="bottom" constant="10" id="5ac-RQ-Diw"/>
+                            <constraint firstItem="OpC-Vz-EUU" firstAttribute="width" secondItem="eua-T5-5pp" secondAttribute="width" id="ATE-qW-zXV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eua-T5-5pp" secondAttribute="trailing" constant="-16" id="HuR-6y-wsn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OpC-Vz-EUU" secondAttribute="trailing" constant="-16" id="Lg3-0u-pk3"/>
+                            <constraint firstItem="x8J-hR-Hew" firstAttribute="leading" secondItem="WfL-xq-XwZ" secondAttribute="leadingMargin" constant="16" id="M3p-6s-08V"/>
+                            <constraint firstItem="eua-T5-5pp" firstAttribute="top" secondItem="F3p-6p-MZT" secondAttribute="bottom" constant="8" id="Sqy-8I-hDs"/>
+                            <constraint firstItem="OpC-Vz-EUU" firstAttribute="top" secondItem="eua-T5-5pp" secondAttribute="bottom" constant="5" id="UHR-nL-1CY"/>
+                            <constraint firstItem="OpC-Vz-EUU" firstAttribute="leading" secondItem="WfL-xq-XwZ" secondAttribute="leadingMargin" constant="-16" id="WGH-Wq-Oge"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="x8J-hR-Hew" secondAttribute="trailing" constant="17" id="a80-3a-qvf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login" id="Ogz-s5-l47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IeC-37-voU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1392.8" y="228.93553223388307"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cPK-42-u0J">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xkr-0j-6q8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eQQ-oT-r0H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="peA-jl-aP1" kind="relationship" relationship="rootViewController" id="Rwu-si-hbS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Cz-Gj-lGy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-343.19999999999999" y="228.93553223388307"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close-btn" width="16" height="16"/>
+        <image name="oops" width="101" height="186"/>
+        <image name="photo" width="32" height="32"/>
+    </resources>
+</document>

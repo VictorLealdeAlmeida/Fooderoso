@@ -20,10 +20,21 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Blogger-Sans.ttf</string>
+		<string>Blogger-Sans-Bold.ttf</string>
+		<string>Blogger-Sans-BoldItalic.ttf</string>
+		<string>Blogger-Sans-Italic.ttf</string>
+		<string>Blogger-Sans-Light.ttf</string>
+		<string>Blogger-Sans-LightItalic.ttf</string>
+		<string>Blogger-Sans-Medium.ttf</string>
+		<string>Blogger-Sans-MediumItalic.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Loading</string>
+	<string>Login</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

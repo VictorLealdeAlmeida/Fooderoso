@@ -123,6 +123,24 @@ class FooderosoManager: NSObject {
             print("FAILURE: something went wrong while trying to get the products")
         })
     }
+    
+    /*
+     #################
+     CHATS
+     #################
+     */
+    
+    func getChats() {
+        guard let userId = FIRAuth.auth()?.currentUser?.uid else {
+            NotificationCenter.default.post(name: FDNotification.userNotLogged, object: nil)
+            return
+        }
+        
+        self.firebaseRef.child("users/\(userId)/chats").queryOrderedByValue().observe(.childAdded, with: {chatSnapshot in
+            
+        })
+    }
+    
 
 }
 
