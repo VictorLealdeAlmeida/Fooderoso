@@ -27,6 +27,11 @@ class UserViewController: BaseViewController {
          initSheet()
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
+
+    
 }
 
 extension UserViewController: UIActionSheetDelegate{
