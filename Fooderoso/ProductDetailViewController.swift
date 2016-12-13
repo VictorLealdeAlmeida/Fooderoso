@@ -113,8 +113,8 @@ class ProductDetailViewController: UIViewController {
     }
     
     @IBAction func backButton(_ sender: Any) {
-        self.navigationController!.popViewController(animated: true)
-        
+//        self.navigationController!.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
