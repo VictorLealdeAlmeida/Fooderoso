@@ -45,16 +45,15 @@ class ProductDetailViewController: UIViewController {
         self.photoProduct.image = self.currentProduct.photo
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        //---------------
-        //Ajustes na view
-        //---------------
+    override func viewWillAppear(_ animated: Bool){
         talkSellerView.layer.cornerRadius = 5
         photoUser.layer.cornerRadius = photoUser.bounds.height/2;
         photoUser.clipsToBounds = true
         photoUser.layer.borderColor = UIColor(red:0.97, green:0.25, blue:0.47, alpha:1.00).cgColor
         photoUser.layer.borderWidth = 1
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        UIApplication.shared.statusBarStyle = .lightContent
     }
     
    /* @IBAction func getCurrentPlace(sender: UIButton) {
@@ -123,11 +122,7 @@ class ProductDetailViewController: UIViewController {
     }
 
     
-    override func viewWillAppear(_ animated: Bool){
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        
-        UIApplication.shared.statusBarStyle = .lightContent
-    }
+   
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
