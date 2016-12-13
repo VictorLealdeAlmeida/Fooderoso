@@ -44,7 +44,7 @@ class CollectionViewController: BaseViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? ProductDetailViewController, let product = sender as? FDProduct {
+        if let vc = segue.destination.childViewControllers[0] as? ProductDetailViewController, let product = sender as? FDProduct {
             vc.currentProduct = product
         }
         
@@ -74,10 +74,6 @@ class CollectionViewController: BaseViewController {
         self.activityIndicador!.stopAnimating()
         self.activityIndicador!.removeFromSuperview()
         self.activityIndicador = nil
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
     }
     
 

@@ -22,8 +22,8 @@ class StoreViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func backButton(_ sender: Any) {
-        self.navigationController!.popViewController(animated: true)
+    @IBAction func close_btn(_ sender: Any) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
    
 }
@@ -32,7 +32,7 @@ class StoreViewController: UIViewController {
 //Extesion para cuidado do Collection das tags//
 //--------------------------------------------//
 
-extension StoreViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+extension StoreViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.items.count
@@ -64,6 +64,13 @@ extension StoreViewController: UICollectionViewDataSource, UICollectionViewDeleg
         print("You selected cell #\(indexPath.item)!")
         performSegue(withIdentifier: "StoreToAdd", sender: nil)
 
+    }
+    
+    //DelegateFlowLayout
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (collectionView.frame.size.width - 50) / 2.0
+        let height = width
+        return CGSize(width: width, height: height)
     }
     
     
