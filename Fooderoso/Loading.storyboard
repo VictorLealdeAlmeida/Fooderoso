@@ -21,13 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7aP-YF-wYc">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7aP-YF-wYc">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7aP-YF-wYc" firstAttribute="centerY" secondItem="LK6-mp-keu" secondAttribute="centerY" id="fdZ-b1-t8Q"/>
+                            <constraint firstItem="7aP-YF-wYc" firstAttribute="centerX" secondItem="LK6-mp-keu" secondAttribute="centerX" id="k7e-QF-Xih"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="s5l-GM-5z5"/>
                 </viewController>
@@ -38,8 +41,9 @@
         <!--Navigation Controller-->
         <scene sceneID="ioz-qx-kaF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nqp-XE-FOo" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="nqp-XE-FOo" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EO2-HQ-Pxz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

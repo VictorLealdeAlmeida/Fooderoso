@@ -16,6 +16,18 @@
 		6797D4031DCE3C3B00DD4587 /* DFProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6797D4021DCE3C3B00DD4587 /* DFProduct.swift */; };
 		6797D4071DCE3DAC00DD4587 /* FDProductTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6797D4061DCE3DAC00DD4587 /* FDProductTag.swift */; };
 		67D778B11E0061B60048BED5 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67D778B01E0061B60048BED5 /* Chat.storyboard */; };
+		67D778B31E0062570048BED5 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D778B21E0062570048BED5 /* ChatListViewController.swift */; };
+		67D778BD1E00636B0048BED5 /* BloggerSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D778B51E00636B0048BED5 /* BloggerSans-Bold.ttf */; };
+		67D778BE1E00636B0048BED5 /* BloggerSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D778B61E00636B0048BED5 /* BloggerSans-BoldItalic.ttf */; };
+		67D778BF1E00636B0048BED5 /* BloggerSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D778B71E00636B0048BED5 /* BloggerSans-Italic.ttf */; };
+		67D778C01E00636B0048BED5 /* BloggerSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D778B81E00636B0048BED5 /* BloggerSans-Light.ttf */; };
+		67D778C11E00636B0048BED5 /* BloggerSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D778B91E00636B0048BED5 /* BloggerSans-LightItalic.ttf */; };
+		67D778C21E00636B0048BED5 /* BloggerSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D778BA1E00636B0048BED5 /* BloggerSans-Medium.ttf */; };
+		67D778C31E00636B0048BED5 /* BloggerSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D778BB1E00636B0048BED5 /* BloggerSans-MediumItalic.ttf */; };
+		67D778C41E00636B0048BED5 /* BloggerSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D778BC1E00636B0048BED5 /* BloggerSans.ttf */; };
+		67D778C61E006DBA0048BED5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67D778C51E006DBA0048BED5 /* Login.storyboard */; };
+		67DB89A61E007B8600AE7077 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DB89A51E007B8600AE7077 /* LoginViewController.swift */; };
+		67DB89A81E007D9700AE7077 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DB89A71E007D9700AE7077 /* CreateUserViewController.swift */; };
 		67F56C711DE22F36001AAD0F /* FDChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F56C701DE22F36001AAD0F /* FDChatRoom.swift */; };
 		67F56C731DE22FB4001AAD0F /* FDChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F56C721DE22FB4001AAD0F /* FDChatMessage.swift */; };
 		67F56C751DE2335D001AAD0F /* FooderosoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F56C741DE2335D001AAD0F /* FooderosoManager.swift */; };
@@ -53,6 +65,18 @@
 		6797D4021DCE3C3B00DD4587 /* DFProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFProduct.swift; sourceTree = "<group>"; };
 		6797D4061DCE3DAC00DD4587 /* FDProductTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDProductTag.swift; sourceTree = "<group>"; };
 		67D778B01E0061B60048BED5 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		67D778B21E0062570048BED5 /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		67D778B51E00636B0048BED5 /* BloggerSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BloggerSans-Bold.ttf"; sourceTree = "<group>"; };
+		67D778B61E00636B0048BED5 /* BloggerSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BloggerSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		67D778B71E00636B0048BED5 /* BloggerSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BloggerSans-Italic.ttf"; sourceTree = "<group>"; };
+		67D778B81E00636B0048BED5 /* BloggerSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BloggerSans-Light.ttf"; sourceTree = "<group>"; };
+		67D778B91E00636B0048BED5 /* BloggerSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BloggerSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		67D778BA1E00636B0048BED5 /* BloggerSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BloggerSans-Medium.ttf"; sourceTree = "<group>"; };
+		67D778BB1E00636B0048BED5 /* BloggerSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BloggerSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		67D778BC1E00636B0048BED5 /* BloggerSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BloggerSans.ttf; sourceTree = "<group>"; };
+		67D778C51E006DBA0048BED5 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		67DB89A51E007B8600AE7077 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		67DB89A71E007D9700AE7077 /* CreateUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		67F56C701DE22F36001AAD0F /* FDChatRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDChatRoom.swift; sourceTree = "<group>"; };
 		67F56C721DE22FB4001AAD0F /* FDChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDChatMessage.swift; sourceTree = "<group>"; };
 		67F56C741DE2335D001AAD0F /* FooderosoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooderosoManager.swift; sourceTree = "<group>"; };
@@ -135,6 +159,21 @@
 			name = "Custom Extensions";
 			sourceTree = "<group>";
 		};
+		67D778B41E0063580048BED5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				67D778B51E00636B0048BED5 /* BloggerSans-Bold.ttf */,
+				67D778B61E00636B0048BED5 /* BloggerSans-BoldItalic.ttf */,
+				67D778B71E00636B0048BED5 /* BloggerSans-Italic.ttf */,
+				67D778B81E00636B0048BED5 /* BloggerSans-Light.ttf */,
+				67D778B91E00636B0048BED5 /* BloggerSans-LightItalic.ttf */,
+				67D778BA1E00636B0048BED5 /* BloggerSans-Medium.ttf */,
+				67D778BB1E00636B0048BED5 /* BloggerSans-MediumItalic.ttf */,
+				67D778BC1E00636B0048BED5 /* BloggerSans.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		78BA05FC3E66389A8BAD9EDC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,8 +215,10 @@
 				D44C6D7F1DCBB249006DB663 /* Model */,
 				D44C6D671DCBA189006DB663 /* Main.storyboard */,
 				67D778B01E0061B60048BED5 /* Chat.storyboard */,
+				67D778C51E006DBA0048BED5 /* Login.storyboard */,
 				676522D41DEE1F6D00BDB880 /* Loading.storyboard */,
 				D43D54771E006D8000BA5103 /* Profile.storyboard */,
+				67D778B41E0063580048BED5 /* Fonts */,
 				D44C6D6D1DCBA189006DB663 /* Assets.xcassets */,
 				D44C6D6F1DCBA189006DB663 /* LaunchScreen.storyboard */,
 				D44C6D721DCBA189006DB663 /* Info.plist */,
@@ -193,11 +234,14 @@
 				67F56C761DE23F6C001AAD0F /* BaseViewController.swift */,
 				676522D61DEE1FC400BDB880 /* LoadingViewController.swift */,
 				D44C6D7A1DCBACFE006DB663 /* CollectionViewController.swift */,
-				D48861C51DE2132D00B5DD2F /* ChatViewController.swift */,
 				D48861C71DE2139C00B5DD2F /* StoreViewController.swift */,
 				D44C6D801DCBD247006DB663 /* ProductDetailViewController.swift */,
 				D43DC9CC1DEE130800CA8935 /* AddProductViewController.swift */,
 				D43D54751E00643600BA5103 /* UserViewController.swift */,
+				67D778B21E0062570048BED5 /* ChatListViewController.swift */,
+				D48861C51DE2132D00B5DD2F /* ChatViewController.swift */,
+				67DB89A51E007B8600AE7077 /* LoginViewController.swift */,
+				67DB89A71E007D9700AE7077 /* CreateUserViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -278,12 +322,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67D778C61E006DBA0048BED5 /* Login.storyboard in Resources */,
+				67D778BE1E00636B0048BED5 /* BloggerSans-BoldItalic.ttf in Resources */,
 				67D778B11E0061B60048BED5 /* Chat.storyboard in Resources */,
 				D44C6D711DCBA189006DB663 /* LaunchScreen.storyboard in Resources */,
 				D43D54781E006D8000BA5103 /* Profile.storyboard in Resources */,
+				67D778C31E00636B0048BED5 /* BloggerSans-MediumItalic.ttf in Resources */,
 				6797D3FA1DCE1F5A00DD4587 /* GoogleService-Info.plist in Resources */,
 				676522D51DEE1F6D00BDB880 /* Loading.storyboard in Resources */,
+				67D778C11E00636B0048BED5 /* BloggerSans-LightItalic.ttf in Resources */,
+				67D778C01E00636B0048BED5 /* BloggerSans-Light.ttf in Resources */,
 				D44C6D6E1DCBA189006DB663 /* Assets.xcassets in Resources */,
+				67D778C41E00636B0048BED5 /* BloggerSans.ttf in Resources */,
+				67D778BF1E00636B0048BED5 /* BloggerSans-Italic.ttf in Resources */,
+				67D778C21E00636B0048BED5 /* BloggerSans-Medium.ttf in Resources */,
+				67D778BD1E00636B0048BED5 /* BloggerSans-Bold.ttf in Resources */,
 				D44C6D691DCBA189006DB663 /* Main.storyboard in Resources */,
 				67F56C7B1DE24067001AAD0F /* Test.storyboard in Resources */,
 			);
@@ -418,11 +471,14 @@
 				D43DC9CD1DEE130800CA8935 /* AddProductViewController.swift in Sources */,
 				D44C6D641DCBA189006DB663 /* AppDelegate.swift in Sources */,
 				D44C6D6C1DCBA189006DB663 /* Fooderoso.xcdatamodeld in Sources */,
+				67DB89A61E007B8600AE7077 /* LoginViewController.swift in Sources */,
 				676522D71DEE1FC400BDB880 /* LoadingViewController.swift in Sources */,
 				67F56C7D1DE24763001AAD0F /* FooderosoNotifications.swift in Sources */,
 				676522D31DEE19BD00BDB880 /* UIViewShadowExtension.swift in Sources */,
 				D44C6D831DCBDBC9006DB663 /* TagsCellCollection.swift in Sources */,
 				67F56C751DE2335D001AAD0F /* FooderosoManager.swift in Sources */,
+				67DB89A81E007D9700AE7077 /* CreateUserViewController.swift in Sources */,
+				67D778B31E0062570048BED5 /* ChatListViewController.swift in Sources */,
 				D48861C61DE2132D00B5DD2F /* ChatViewController.swift in Sources */,
 				67F56CAD1DE26274001AAD0F /* FDUserStore.swift in Sources */,
 				67F56C731DE22FB4001AAD0F /* FDChatMessage.swift in Sources */,
