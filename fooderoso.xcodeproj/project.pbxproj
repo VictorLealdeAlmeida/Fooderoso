@@ -26,6 +26,8 @@
 		67D778C31E00636B0048BED5 /* BloggerSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D778BB1E00636B0048BED5 /* BloggerSans-MediumItalic.ttf */; };
 		67D778C41E00636B0048BED5 /* BloggerSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D778BC1E00636B0048BED5 /* BloggerSans.ttf */; };
 		67D778C61E006DBA0048BED5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67D778C51E006DBA0048BED5 /* Login.storyboard */; };
+		67DB89A61E007B8600AE7077 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DB89A51E007B8600AE7077 /* LoginViewController.swift */; };
+		67DB89A81E007D9700AE7077 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DB89A71E007D9700AE7077 /* CreateUserViewController.swift */; };
 		67F56C711DE22F36001AAD0F /* FDChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F56C701DE22F36001AAD0F /* FDChatRoom.swift */; };
 		67F56C731DE22FB4001AAD0F /* FDChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F56C721DE22FB4001AAD0F /* FDChatMessage.swift */; };
 		67F56C751DE2335D001AAD0F /* FooderosoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F56C741DE2335D001AAD0F /* FooderosoManager.swift */; };
@@ -71,6 +73,8 @@
 		67D778BB1E00636B0048BED5 /* BloggerSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BloggerSans-MediumItalic.ttf"; sourceTree = "<group>"; };
 		67D778BC1E00636B0048BED5 /* BloggerSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BloggerSans.ttf; sourceTree = "<group>"; };
 		67D778C51E006DBA0048BED5 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		67DB89A51E007B8600AE7077 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		67DB89A71E007D9700AE7077 /* CreateUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		67F56C701DE22F36001AAD0F /* FDChatRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDChatRoom.swift; sourceTree = "<group>"; };
 		67F56C721DE22FB4001AAD0F /* FDChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDChatMessage.swift; sourceTree = "<group>"; };
 		67F56C741DE2335D001AAD0F /* FooderosoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooderosoManager.swift; sourceTree = "<group>"; };
@@ -230,6 +234,8 @@
 				D43DC9CC1DEE130800CA8935 /* AddProductViewController.swift */,
 				67D778B21E0062570048BED5 /* ChatListViewController.swift */,
 				D48861C51DE2132D00B5DD2F /* ChatViewController.swift */,
+				67DB89A51E007B8600AE7077 /* LoginViewController.swift */,
+				67DB89A71E007D9700AE7077 /* CreateUserViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -457,11 +463,13 @@
 				D43DC9CD1DEE130800CA8935 /* AddProductViewController.swift in Sources */,
 				D44C6D641DCBA189006DB663 /* AppDelegate.swift in Sources */,
 				D44C6D6C1DCBA189006DB663 /* Fooderoso.xcdatamodeld in Sources */,
+				67DB89A61E007B8600AE7077 /* LoginViewController.swift in Sources */,
 				676522D71DEE1FC400BDB880 /* LoadingViewController.swift in Sources */,
 				67F56C7D1DE24763001AAD0F /* FooderosoNotifications.swift in Sources */,
 				676522D31DEE19BD00BDB880 /* UIViewShadowExtension.swift in Sources */,
 				D44C6D831DCBDBC9006DB663 /* TagsCellCollection.swift in Sources */,
 				67F56C751DE2335D001AAD0F /* FooderosoManager.swift in Sources */,
+				67DB89A81E007D9700AE7077 /* CreateUserViewController.swift in Sources */,
 				67D778B31E0062570048BED5 /* ChatListViewController.swift in Sources */,
 				D48861C61DE2132D00B5DD2F /* ChatViewController.swift in Sources */,
 				67F56CAD1DE26274001AAD0F /* FDUserStore.swift in Sources */,
