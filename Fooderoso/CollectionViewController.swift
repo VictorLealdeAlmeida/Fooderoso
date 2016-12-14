@@ -29,6 +29,11 @@ class CollectionViewController: BaseViewController {
         
     }
     
+    @IBAction func pressPhotoUser(_ sender: Any) {
+        performSegue(withIdentifier: "HomeToMenu", sender: nil)
+    }
+   
+    
     override func viewWillAppear(_ animated: Bool){
         photoUser.layer.cornerRadius = photoUser.bounds.height/2;
         photoUser.clipsToBounds = true
