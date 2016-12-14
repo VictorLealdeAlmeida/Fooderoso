@@ -72,11 +72,6 @@ class CreateUserViewController: UITableViewController {
         }
         
 //        let user = FDUser(
-<<<<<<< HEAD
-//        self.manager.saveNewUser(<#T##user: FDUser##FDUser#>)
-=======
-     //   self.manager.saveNewUser(<#T##user: FDUser##FDUser#>)
->>>>>>> 1ea01746a9d0c4ccf9a343771bb0f2b04f88d0b1
         
     }
     

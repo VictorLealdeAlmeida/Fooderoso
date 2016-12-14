@@ -120,16 +120,7 @@ class ProductDetailViewController: UIViewController {
         print(92372937)
     }
 
-    
-<<<<<<< HEAD
-    override func viewWillAppear(_ animated: Bool){
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        
-        UIApplication.shared.statusBarStyle = .lightContent
-    }
-=======
-   
->>>>>>> 1ea01746a9d0c4ccf9a343771bb0f2b04f88d0b1
+
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
