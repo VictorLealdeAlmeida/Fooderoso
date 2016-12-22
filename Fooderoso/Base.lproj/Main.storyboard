@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hhv-CA-bV0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hhv-CA-bV0">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -71,7 +71,7 @@
         <scene sceneID="GJg-7V-eKp">
             <objects>
                 <navigationController hidesBottomBarWhenPushed="YES" id="3x1-hg-g8M" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Sb8-2O-pVi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sb8-2O-pVi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -537,7 +537,7 @@
             <objects>
                 <navigationController id="Hhv-CA-bV0" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Mkh-1O-J7C">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Mkh-1O-J7C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.95283776519999996" green="0.95300072430000005" blue="0.95282751320000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -566,20 +566,37 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eliete" translatesAutoresizingMaskIntoConstraints="NO" id="RjV-AA-BxF">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="RjV-AA-BxF" secondAttribute="height" multiplier="1:1" id="S9S-M6-oeL"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eliete" translatesAutoresizingMaskIntoConstraints="NO" id="RjV-AA-BxF">
+                                <rect key="frame" x="0.0" y="-61" width="320" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GULOSEIMAS" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xph-m8-pqd">
-                                <rect key="frame" x="16" y="328" width="288" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GULOSEIMAS" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xph-m8-pqd">
+                                <rect key="frame" x="16" y="267" width="288" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.1058823529" green="0.054901960780000002" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z76-qe-qRG" userLabel="GradientBgBottom">
+                                <rect key="frame" x="0.0" y="197" width="320" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="BE3-io-Nbt">
+                                        <rect key="frame" x="13" y="5" width="301" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Eliete Luzinete Elizabeth Elisete Mariete Marionete Lindonete Mariete Eliete Luzinete Elizabeth Elisete Mariete Marionete Lindonete Mariete </string>
+                                        <fontDescription key="fontDescription" name="BloggerSans-Light" family="Blogger Sans" pointSize="15"/>
+                                        <color key="textColor" red="0.94509803920000002" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.21979561240000001" green="0.21979561240000001" blue="0.21979561240000001" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientFromBlack" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EMg-m6-vvm">
-                                <rect key="frame" x="0.0" y="352" width="320" height="216"/>
+                                <rect key="frame" x="0.0" y="291" width="320" height="213"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OxX-gn-NUd">
@@ -599,6 +616,14 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l7l-UC-o6p">
                                                     <rect key="frame" x="2" y="0.0" width="132" height="136"/>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rqz-Pe-f2C" userLabel="gradientBg">
+                                                    <rect key="frame" x="2" y="94" width="132" height="42"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.21979561240000001" green="0.21979561240000001" blue="0.21979561240000001" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="gradientFromBlack" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIY-HW-H0b">
                                                     <rect key="frame" x="8" y="101" width="118" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -611,14 +636,6 @@
                                                     <color key="textColor" red="0.94509803920000002" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rqz-Pe-f2C" userLabel="gradientBg">
-                                                    <rect key="frame" x="2" y="94" width="132" height="42"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.21979561240000001" green="0.21979561240000001" blue="0.21979561240000001" alpha="0.5" colorSpace="calibratedRGB"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="gradientFromBlack" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
                                             </subviews>
                                         </view>
                                         <constraints>
@@ -641,62 +658,14 @@
                                             <outlet property="productText" destination="nIY-HW-H0b" id="G4m-KH-krT"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" semanticContentAttribute="spatial" reuseIdentifier="" id="3fq-mq-vnz" customClass="CellCollection" customModule="Fooderoso" customModuleProvider="target">
-                                        <rect key="frame" x="166" y="20" width="134" height="136"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="134" height="136"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RU2-DM-wLC">
-                                                    <rect key="frame" x="2" y="0.0" width="132" height="136"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEq-55-vab">
-                                                    <rect key="frame" x="11" y="98" width="115" height="14"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.94509803920000002" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R$10.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHF-oO-sDB">
-                                                    <rect key="frame" x="11" y="115" width="61" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <color key="textColor" red="0.94509803920000002" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <connections>
-                                            <outlet property="productImage" destination="RU2-DM-wLC" id="EV9-cC-szs"/>
-                                            <outlet property="productText" destination="bEq-55-vab" id="K8C-vf-cah"/>
-                                        </connections>
-                                    </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="OAc-qd-YUM" id="1H3-cH-iR2"/>
                                     <outlet property="delegate" destination="OAc-qd-YUM" id="fg2-qB-zBX"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z76-qe-qRG" userLabel="GradientBgBottom">
-                                <rect key="frame" x="0.0" y="258" width="320" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.21979561240000001" green="0.21979561240000001" blue="0.21979561240000001" alpha="0.5" colorSpace="calibratedRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientFromBlack" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="RjV-AA-BxF" secondAttribute="trailing" id="Il1-Nz-sr8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xph-m8-pqd" secondAttribute="trailing" id="KY3-WR-R9e"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="xph-m8-pqd" secondAttribute="leading" id="Rps-eZ-agn"/>
-                            <constraint firstItem="RjV-AA-BxF" firstAttribute="leading" secondItem="Mnh-NK-38J" secondAttribute="leading" id="XhH-Kq-2fp"/>
-                            <constraint firstItem="xph-m8-pqd" firstAttribute="top" secondItem="RjV-AA-BxF" secondAttribute="bottom" constant="8" id="bkM-hJ-WgB"/>
-                            <constraint firstItem="RjV-AA-BxF" firstAttribute="top" secondItem="Mnh-NK-38J" secondAttribute="top" id="rpd-gS-Sa7"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Luzinete" id="hTO-w9-7um">
                         <barButtonItem key="rightBarButtonItem" image="options" id="nEN-Pm-t4Q">
@@ -712,7 +681,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUn-eD-1uW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1643" y="1100"/>
+            <point key="canvasLocation" x="1642.5" y="1099.6478873239437"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="soS-Ki-4b7">
@@ -720,7 +689,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LbY-VP-zvy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="ekb-TA-SjL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ekb-TA-SjL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.95283776519999996" green="0.95300072430000005" blue="0.95282751320000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
