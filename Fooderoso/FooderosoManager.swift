@@ -81,6 +81,8 @@ class FooderosoManager: NSObject {
             pathsDict["tags/\(tag.name)/products/\(productKey)"] = true
         }
         
+        pathsDict["users/\(self.currentUser!.id!)/products/\(productKey)"] = false
+        
         firebaseRef.updateChildValues(pathsDict, withCompletionBlock: { (error, ref) in
             if let error = error {
                 print("FAILURE: something went wrong while trying to save the product")

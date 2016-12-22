@@ -45,21 +45,76 @@ extension StoreViewController {
             
             if self.currentPlace == nil {
                 // if theres no place set up, ask for the user to do it before turning it on
-                let alert = UIAlertController(title: "Local indefinido", message: "Por favor, adicione o local no qual você está vendendo antes de continuar", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Local indefinido", message: "Por favor, antes de ativar a venda, adicione o local no qual você está vendendo (Ex.: Centro de Informática - UFPE)", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
                     sender.setOn(false, animated: true)
                 }))
+                self.present(alert, animated: true, completion: nil)
+                return
                 
             } else { // there's a place already set up
-                // show edit button of the collection view
-                self.editBtn.isHidden = false
+                self.toggleLoading(true)
+                self.manager.toggleSellingMode(true, location: self.currentPlace!)
             }
             
         } else { // turning the selling mode OFF
-            self.editBtn.isHidden = true
+            self.toggleLoading(true)
+            self.manager.toggleSellingMode(false)
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(StoreViewController.sellingModeUpdated), name: FDNotification.sellingModeUpdated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(StoreViewController.sellingModeFailed), name: FDNotification.sellingModeFailed, object: nil)
     }
     
+    func toggleLoading(_ shouldLoad: Bool) {
+        
+    }
+    
+}
+
+//--------------------------------------------//
+//                  ACTIONS                   //
+//--------------------------------------------//
+extension StoreViewController {
+    func sellingModeUpdated() {
+        NotificationCenter.default.removeObserver(self, name: FDNotification.sellingModeUpdated, object: nil)
+        NotificationCenter.default.removeObserver(self, name: FDNotification.sellingModeFailed, object: nil)
+        
+        let title: String
+        let message: String
+        
+        if self.statusSwitch.isOn {
+            title = "Vendendo!"
+            message = "Pronto! Agora é partir pras vendas! ;-)"
+        } else {
+            title = "Venda desativada!"
+            message = "A gente entende que todo mundo merece um pouco de descanso."
+        }
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+        self.editBtn.isHidden = !self.statusSwitch.isOn
+    }
+    
+    func sellingModeFailed() {
+        NotificationCenter.default.removeObserver(self, name: FDNotification.sellingModeUpdated, object: nil)
+        NotificationCenter.default.removeObserver(self, name: FDNotification.sellingModeFailed, object: nil)
+        
+        let message: String
+        if self.statusSwitch.isOn {
+            message = "Ocorreu algo estranho. Não foi possível ativar as vendas! :("
+        } else {
+            message = "Ocorreu algo estranho. Não foi possível desativar as vendas! :("
+        }
+        
+        let alert = UIAlertController(title: "Ooops!", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+        self.statusSwitch.setOn(!self.statusSwitch.isOn, animated: true)
+    }
 }
 
 //--------------------------------------------//
