@@ -36,9 +36,16 @@ class AddProductTableViewController: UITableViewController {
     
     // Test Data
     var tags = [
-        FDProductTag(withName: "chocolate"),
+        FDProductTag(withName: "doce"),
         FDProductTag(withName: "salgado"),
-        FDProductTag(withName: "doce")
+        FDProductTag(withName: "fritinhos"),
+        FDProductTag(withName: "espacial"),
+        FDProductTag(withName: "bebidas"),
+        FDProductTag(withName: "geladinhos"),
+        FDProductTag(withName: "chocolate"),
+        FDProductTag(withName: "vegano"),
+        FDProductTag(withName: "vegetariano"),
+        FDProductTag(withName: "zero-lactose")
     ]
     var selectedTags: [FDProductTag] = []
     
