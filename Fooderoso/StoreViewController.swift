@@ -8,28 +8,62 @@
 
 import UIKit
 
-class StoreViewController: UIViewController {
+class StoreViewController: BaseViewController {
+    
+    @IBOutlet var statusSwitch: UISwitch!
+    @IBOutlet var sellingTitleLbl: UILabel!
+    @IBOutlet var placeBtn: UIButton!
+    @IBOutlet var editBtn: UIButton!
+    
+    var currentPlace: String?
     
     var items = ["1", "2", "3", "4"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.statusSwitch.tintColor = UIColor(red:0.68, green:0.68, blue:0.68, alpha:1.00)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func close_btn(_ sender: Any) {
-        self.navigationController?.dismiss(animated: true, completion: nil)
-    }
    
 }
 
 //--------------------------------------------//
-//Extesion para cuidado do Collection das tags//
+//                  ACTIONS                   //
+//--------------------------------------------//
+extension StoreViewController {
+    @IBAction func close_btn(_ sender: Any) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func statusChanged(_ sender: UISwitch) {
+        
+        if sender.isOn { // turning the selling mode ON
+            
+            if self.currentPlace == nil {
+                // if theres no place set up, ask for the user to do it before turning it on
+                let alert = UIAlertController(title: "Local indefinido", message: "Por favor, adicione o local no qual você está vendendo antes de continuar", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+                    sender.setOn(false, animated: true)
+                }))
+                
+            } else { // there's a place already set up
+                // show edit button of the collection view
+                self.editBtn.isHidden = false
+            }
+            
+        } else { // turning the selling mode OFF
+            self.editBtn.isHidden = true
+        }
+    }
+    
+}
+
+//--------------------------------------------//
+//Extesion para cuidado do Collection dos produtos//
 //--------------------------------------------//
 
 extension StoreViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate{

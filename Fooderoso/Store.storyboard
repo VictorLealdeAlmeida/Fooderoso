@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kxs-CS-V1u">
-                                <rect key="frame" x="0.0" y="159" width="320" height="345"/>
+                                <rect key="frame" x="0.0" y="172" width="320" height="332"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DDY-1Z-aip">
                                     <size key="itemSize" width="134" height="136"/>
@@ -151,6 +151,9 @@
                                         <rect key="frame" x="231" y="15" width="51" height="31"/>
                                         <color key="onTintColor" red="0.96935218570000004" green="0.50975614790000001" blue="0.28074672820000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="statusChanged:" destination="0Ky-Kd-aDg" eventType="valueChanged" id="rTH-m9-ek1"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -191,40 +194,45 @@
                                     <constraint firstItem="E0Q-b1-Bkq" firstAttribute="leading" secondItem="23D-Jf-unc" secondAttribute="leading" constant="8" id="v5t-nx-Jf2"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUAS GULOSEIMAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyk-b9-RBf">
-                                <rect key="frame" x="16" y="144" width="238" height="15"/>
-                                <fontDescription key="fontDescription" name="BloggerSans" family="Blogger Sans" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBn-xZ-Qzv">
-                                <rect key="frame" x="258" y="130" width="46" height="29"/>
-                                <fontDescription key="fontDescription" name="BloggerSans" family="Blogger Sans" pointSize="17"/>
-                                <state key="normal" title="Editar">
-                                    <color key="titleColor" red="0.96935218570000004" green="0.50975614790000001" blue="0.28074672820000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZiM-Vi-zui">
+                                <rect key="frame" x="16" y="143" width="288" height="29"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUAS GULOSEIMAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="uyk-b9-RBf">
+                                        <rect key="frame" x="0.0" y="14" width="205" height="15"/>
+                                        <fontDescription key="fontDescription" name="BloggerSans" family="Blogger Sans" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBn-xZ-Qzv">
+                                        <rect key="frame" x="210" y="0.0" width="78" height="29"/>
+                                        <fontDescription key="fontDescription" name="BloggerSans" family="Blogger Sans" pointSize="17"/>
+                                        <state key="normal" title="Editar">
+                                            <color key="titleColor" red="0.96935218570000004" green="0.50975614790000001" blue="0.28074672820000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="oBn-xZ-Qzv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uyk-b9-RBf" secondAttribute="trailing" constant="5" id="oeF-WJ-Zoa"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="kxs-CS-V1u" secondAttribute="trailing" constant="-16" id="0T6-mi-k0s"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oBn-xZ-Qzv" secondAttribute="trailing" id="2Hm-u9-ctz"/>
-                            <constraint firstItem="kxs-CS-V1u" firstAttribute="top" secondItem="oBn-xZ-Qzv" secondAttribute="bottom" id="2mK-jW-apr"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ZiM-Vi-zui" secondAttribute="leading" id="4Qn-29-1xI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mHj-PN-yKm" secondAttribute="trailing" id="5Jx-T3-kA3"/>
-                            <constraint firstItem="uyk-b9-RBf" firstAttribute="top" secondItem="23D-Jf-unc" secondAttribute="bottom" constant="8" id="5zi-oA-wfu"/>
                             <constraint firstItem="mHj-PN-yKm" firstAttribute="width" secondItem="23D-Jf-unc" secondAttribute="width" id="6gW-cQ-AsC"/>
+                            <constraint firstItem="ZiM-Vi-zui" firstAttribute="top" secondItem="23D-Jf-unc" secondAttribute="bottom" constant="7" id="AjS-iI-PxN"/>
                             <constraint firstAttribute="leadingMargin" secondItem="23D-Jf-unc" secondAttribute="leading" id="F3T-2f-qKe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="uyk-b9-RBf" secondAttribute="trailing" constant="50" id="HUy-eA-7Ah"/>
                             <constraint firstItem="mHj-PN-yKm" firstAttribute="top" secondItem="tai-qt-h87" secondAttribute="bottom" constant="8" id="UmJ-GB-Ru8"/>
                             <constraint firstAttribute="leadingMargin" secondItem="kxs-CS-V1u" secondAttribute="leading" constant="16" id="VuX-OB-Mew"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="uyk-b9-RBf" secondAttribute="leading" id="Z3q-PT-Hag"/>
                             <constraint firstItem="eAM-rB-C6P" firstAttribute="top" secondItem="kxs-CS-V1u" secondAttribute="bottom" id="ZJZ-Fo-DZX"/>
-                            <constraint firstItem="oBn-xZ-Qzv" firstAttribute="leading" secondItem="uyk-b9-RBf" secondAttribute="trailing" constant="4" id="kn2-Yc-ZWk"/>
+                            <constraint firstItem="kxs-CS-V1u" firstAttribute="top" secondItem="ZiM-Vi-zui" secondAttribute="bottom" id="ZgC-BO-qlL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="23D-Jf-unc" secondAttribute="trailing" id="pCx-wW-B7W"/>
                             <constraint firstItem="mHj-PN-yKm" firstAttribute="height" secondItem="23D-Jf-unc" secondAttribute="height" id="rDa-TN-qNH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZiM-Vi-zui" secondAttribute="trailing" id="uhq-hf-Ly8"/>
                             <constraint firstAttribute="leadingMargin" secondItem="mHj-PN-yKm" secondAttribute="leading" id="v1U-iD-hHK"/>
                             <constraint firstItem="23D-Jf-unc" firstAttribute="top" secondItem="mHj-PN-yKm" secondAttribute="bottom" constant="8" id="x52-Ws-AqZ"/>
-                            <constraint firstItem="kxs-CS-V1u" firstAttribute="top" secondItem="uyk-b9-RBf" secondAttribute="bottom" id="yer-g7-JWE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Lojinha" id="sd8-Ib-8Yk">
@@ -236,6 +244,10 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="editBtn" destination="oBn-xZ-Qzv" id="eML-Eh-Gcj"/>
+                        <outlet property="placeBtn" destination="4Mi-t3-CMG" id="6HI-8c-5gg"/>
+                        <outlet property="sellingTitleLbl" destination="Z0B-KR-xqA" id="6vm-ki-Fw8"/>
+                        <outlet property="statusSwitch" destination="QNv-Bg-aQ7" id="9FB-xY-ef5"/>
                         <segue destination="80d-Zf-MEs" kind="show" identifier="StoreToAdd" id="JrU-5e-Q8t">
                             <nil key="action"/>
                         </segue>
@@ -244,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AKL-ar-Li7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-137" y="-1989"/>
+            <point key="canvasLocation" x="-138.75" y="-1989.0845070422536"/>
         </scene>
         <!--Adicionar produto-->
         <scene sceneID="QW2-zx-8Mx">
@@ -294,7 +306,7 @@
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AT-ba-UY3">
-                                                            <rect key="frame" x="269" y="14.5" width="31" height="31"/>
+                                                            <rect key="frame" x="269" y="15" width="31" height="31"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="4AT-ba-UY3" secondAttribute="height" multiplier="1:1" id="gNq-Ju-s9B"/>
                                                             </constraints>

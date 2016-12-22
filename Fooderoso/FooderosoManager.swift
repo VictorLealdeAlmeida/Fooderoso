@@ -26,7 +26,7 @@ class FooderosoManager: NSObject {
     var productsOnSale: [FDProduct] = []
     
     fileprivate var userChatsKeys: [String] = []
-    fileprivate var userProductsKeys: [String] = []
+    fileprivate var userProductsKeys: [String:Bool] = [:]
     fileprivate var loadedUsers: [FDUser] = []
     
     /*
@@ -94,10 +94,6 @@ class FooderosoManager: NSObject {
         })
     }
     
-    func startSelling() {
-        
-    }
-    
     func getProducts() {
         firebaseRef.child("products").queryOrdered(byChild: "selling").queryEqual(toValue: true).observe(.value, with: {productsSnapshot in
             guard let productsJSON = productsSnapshot.json else {
@@ -121,6 +117,26 @@ class FooderosoManager: NSObject {
             
         }, withCancel: {error in
             print("FAILURE: something went wrong while trying to get the products")
+        })
+    }
+    
+    func toggleSellingMode(_ status: Bool, location: String?=nil) {
+        var pathsDict:[String:Any] = [:]
+        pathsDict["users/\(self.currentUser!.id!)/is-selling"] = status
+        
+        if let loc = location {
+            pathsDict["users/\(self.currentUser!.id!)/location/name"] = loc
+        }
+        
+        firebaseRef.updateChildValues(pathsDict, withCompletionBlock: { (error, ref) in
+            if let error = error {
+                print("FAILURE: something went wrong while trying to update the selling status")
+                print(error.localizedDescription)
+                NotificationCenter.default.post(name: FDNotification.sellingModeFailed, object: nil)
+                return
+            }
+            
+            NotificationCenter.default.post(name: FDNotification.sellingModeUpdated, object: nil)
         })
     }
     
@@ -175,11 +191,8 @@ extension FooderosoManager {
             }
             
             self.currentUser = FDUser(withId: userId, andJSON: userJSON)
-            if let productsKeys = userJSON["products"].arrayObject as? [[String : Bool]] {
-                self.userProductsKeys = []
-//                for (productKey, _) in productsKeys {
-//                    self.userProductsKeys.append(productKey)
-//                }
+            if let productsKeys = userJSON["products"].dictionaryObject as? [String : Bool] {
+                self.userProductsKeys = productsKeys
             }
             
             NotificationCenter.default.post(name: FDNotification.userLoggedInSuccessfully, object: nil)
