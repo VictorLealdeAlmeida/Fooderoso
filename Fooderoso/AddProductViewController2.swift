@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddProductViewController: UIViewController, UITextFieldDelegate {
+class AddProductViewController2: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var valueText: UITextField!
@@ -59,7 +59,7 @@ class AddProductViewController: UIViewController, UITextFieldDelegate {
 //Extesion para cuidar do Collection das tags//
 //-------------------------------------------//
 
-extension AddProductViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+extension AddProductViewController2: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.tags.count
@@ -89,12 +89,6 @@ extension AddProductViewController: UICollectionViewDataSource, UICollectionView
         }else{
             selectedCell.contentView.backgroundColor = UIColor(red:0.57, green:0.57, blue:0.57, alpha:1.00)
         }
-        
-        
-        
-        
-        
-        
         
     }
     

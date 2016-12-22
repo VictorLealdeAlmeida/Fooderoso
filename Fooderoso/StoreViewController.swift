@@ -43,7 +43,7 @@ extension StoreViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         if((indexPath.row + 1) < self.items.count){
 
         
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoreCellColection", for: indexPath as IndexPath) as! CellCollection
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath as IndexPath) as! CellCollection
             
             
             cell.productImage.image = UIImage(named: "feijoada")!
@@ -53,7 +53,7 @@ extension StoreViewController: UICollectionViewDelegateFlowLayout, UICollectionV
             
         }else{
             
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddProduct", for: indexPath) 
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addProductCell", for: indexPath) 
             return cell;
             
         }
@@ -64,7 +64,7 @@ extension StoreViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         if((indexPath.row + 1) == self.items.count){
         
             print("You selected cell #\(indexPath.item)!")
-            performSegue(withIdentifier: "StoreToAdd", sender: nil)
+            performSegue(withIdentifier: "addProdSegue", sender: nil)
                 
         }else{
             
