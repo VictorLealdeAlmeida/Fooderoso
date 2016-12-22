@@ -11,6 +11,7 @@ import CoreData
 import Firebase
 import GoogleMaps
 import GooglePlaces
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            print ("Error signing out: %@", signOutError)
 //        }
         
+        IQKeyboardManager.sharedManager().enable = true
         
         self.window?.tintColor = UIColor(red:0.96, green:0.51, blue:0.31, alpha:1.00)
         

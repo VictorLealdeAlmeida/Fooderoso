@@ -16,15 +16,19 @@ class AddProductTableViewController: UITableViewController {
     @IBOutlet var descTxtFld: UITextField!
     
     @IBOutlet var tagsCollection: UICollectionView!
+    @IBOutlet var charactersCount: UILabel!
     
+    let manager = FooderosoManager.instance
     var prodImage: UIImage? {
         didSet {
-            self.prodImageView.image = self.prodImage
+            if self.prodImage != nil {
+                self.prodImageView.image = self.prodImage
+            }
             
             // reload the table to show or hide the image
             let indexPath = IndexPath(row: 0, section: 0)
-            self.tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.top)
-//            self.tableView.reloadData()
+            self.tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            self.tableView.reloadData()
         }
     }
     
@@ -32,7 +36,10 @@ class AddProductTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //TODO: set info if editing a product
+        self.charactersCount.text = "\(140-self.descTxtFld.text!.characters.count)/140"
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -134,12 +141,27 @@ extension AddProductTableViewController {
 extension AddProductTableViewController {
     
     @IBAction func selectImage(_ sender: Any) {
-        let alert = UIAlertController(title: "Imagem do produto", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Imagem do produto", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Importar da biblioteca", style: .default, handler: { (action) in
-            
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+                let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+                imagePicker.allowsEditing = true
+                self.present(imagePicker, animated: true, completion: nil)
+            }
         }))
-        alert.addAction(UIAlertAction(title: "Imagem da câmera", style: .default, handler: { (action) in
-            
+        alert.addAction(UIAlertAction(title: "Tirar foto", style: .default, handler: { (action) in
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+                let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+                imagePicker.allowsEditing = true
+                self.present(imagePicker, animated: true, completion: nil)
+            } else {
+                let alertMsg = UIAlertController(title: "Permissão necessária", message: "Por favor permita o acesso à camera nas configurações do aplicativo", preferredStyle: UIAlertControllerStyle.alert)
+                alertMsg.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            }
         }))
         
         if prodImage != nil {
@@ -147,10 +169,21 @@ extension AddProductTableViewController {
                 self.prodImage = nil
             }))
         }
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func saveInfo(_ sender: Any) {
+        guard let image = self.prodImage, let name = self.nameTxtFld.text, let price = Double(self.priceTxtFld.text!), let desc = self.descTxtFld.text else {
+            let alert = UIAlertController(title: "Informações faltando", message: "Por favor, preencha todas as informações para salvar o produto.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        let product = FDProduct(withName: name, andDesc: desc, andPhoto: image, andPrice: price, andSeller: self.manager.currentUser!, andTags: [])
+        self.manager.saveProduct(product)
     }
     
     @IBAction func cancelAdd(_ sender: Any) {
@@ -165,7 +198,7 @@ extension AddProductTableViewController {
 }
 
 //-------------------------------------------//
-//Extesion para cuidar da Collection das tags//
+//                COLLECTION                 //
 //-------------------------------------------//
 
 extension AddProductTableViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
@@ -201,4 +234,29 @@ extension AddProductTableViewController: UICollectionViewDataSource, UICollectio
         
     }
     
+}
+
+//-------------------------------------------//
+//               IMAGE PICKER                //
+//-------------------------------------------//
+extension AddProductTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [AnyHashable: Any]!) {
+        self.prodImage = image
+        self.dismiss(animated: true, completion: nil);
+    }
+}
+
+
+//-------------------------------------------//
+//             TEXT VIEW DELEGATE            //
+//-------------------------------------------//
+extension AddProductTableViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let newSize = textView.text.characters.count + (text.characters.count - range.length)
+        if newSize <= 140 {
+            self.charactersCount.text = "\(140-newSize)/140"
+            return true
+        }
+        return false
+    }
 }

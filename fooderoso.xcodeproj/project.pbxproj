@@ -308,7 +308,7 @@
 				TargetAttributes = {
 					D44C6D5F1DCBA189006DB663 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = A975LQD622;
+						DevelopmentTeam = PMU36CU64R;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -655,7 +655,7 @@
 			baseConfigurationReference = 703653FE345C6DC2E9927EDE /* Pods-Fooderoso.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A975LQD622;
+				DEVELOPMENT_TEAM = PMU36CU64R;
 				INFOPLIST_FILE = Fooderoso/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.fooderoso;
@@ -671,7 +671,7 @@
 			baseConfigurationReference = BA2CDF7E0337FC2DDDDE4AAB /* Pods-Fooderoso.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A975LQD622;
+				DEVELOPMENT_TEAM = PMU36CU64R;
 				INFOPLIST_FILE = Fooderoso/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.ufpe.cin.fooderoso;

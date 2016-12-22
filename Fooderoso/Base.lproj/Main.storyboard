@@ -328,7 +328,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feijão Capoeira " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="OVr-EU-omU">
-                                <rect key="frame" x="16" y="265" width="137" height="22"/>
+                                <rect key="frame" x="16" y="265" width="139" height="22"/>
                                 <fontDescription key="fontDescription" name="BloggerSans-Light" family="Blogger Sans" pointSize="22"/>
                                 <color key="textColor" red="0.94509803920000002" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -390,7 +390,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="luq-NN-ApA">
-                                <rect key="frame" x="161" y="265" width="141" height="31.5"/>
+                                <rect key="frame" x="163" y="265" width="141" height="31.5"/>
                                 <color key="backgroundColor" red="0.97898715729999997" green="0.23534375430000001" blue="0.46496671439999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="luq-NN-ApA" secondAttribute="height" multiplier="127:37" constant="33.162162162162161" id="WhS-QQ-gZq"/>
@@ -436,7 +436,10 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGz-n0-vEj">
-                                <rect key="frame" x="284" y="28" width="16" height="22"/>
+                                <rect key="frame" x="280" y="21" width="33" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qGz-n0-vEj" secondAttribute="height" multiplier="11:12" id="nFK-ax-mkD"/>
+                                </constraints>
                                 <state key="normal" image="close-btn">
                                     <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </state>
@@ -458,26 +461,28 @@
                             <constraint firstItem="aNB-YX-UyP" firstAttribute="width" secondItem="FnV-HJ-FPH" secondAttribute="height" multiplier="80:79" id="IBi-Xc-RJU"/>
                             <constraint firstAttribute="leadingMargin" secondItem="OVr-EU-omU" secondAttribute="leading" id="IbJ-01-0jZ"/>
                             <constraint firstItem="HDL-e6-yD0" firstAttribute="width" secondItem="ZsW-gO-AXW" secondAttribute="height" multiplier="9:142" id="IvI-3v-1QK"/>
-                            <constraint firstItem="aNB-YX-UyP" firstAttribute="leading" secondItem="FnV-HJ-FPH" secondAttribute="trailing" constant="-320" id="LZt-v8-HQl"/>
                             <constraint firstItem="zzt-pM-rZl" firstAttribute="top" secondItem="Tk2-e4-BAT" secondAttribute="bottom" constant="8" id="OBG-iW-AQz"/>
                             <constraint firstItem="Tk2-e4-BAT" firstAttribute="leading" secondItem="zzt-pM-rZl" secondAttribute="trailing" constant="-212" id="Ovw-b8-kaJ"/>
                             <constraint firstItem="hBK-H1-IQe" firstAttribute="top" secondItem="FnV-HJ-FPH" secondAttribute="bottom" constant="-32" id="PEe-SQ-uXw"/>
+                            <constraint firstItem="qGz-n0-vEj" firstAttribute="width" secondItem="FnV-HJ-FPH" secondAttribute="height" multiplier="33:316" id="Scb-Ix-8cG"/>
+                            <constraint firstItem="aNB-YX-UyP" firstAttribute="leading" secondItem="ZsW-gO-AXW" secondAttribute="leadingMargin" constant="-16" id="TaF-dD-GCZ"/>
                             <constraint firstItem="uEU-l8-D0y" firstAttribute="top" secondItem="aNB-YX-UyP" secondAttribute="bottom" constant="252" id="Vqo-nH-kfI"/>
                             <constraint firstItem="aNB-YX-UyP" firstAttribute="top" secondItem="OVr-EU-omU" secondAttribute="bottom" constant="-33" id="WhJ-rj-Pdk"/>
                             <constraint firstItem="luq-NN-ApA" firstAttribute="top" secondItem="FnV-HJ-FPH" secondAttribute="bottom" constant="-51" id="Xp1-re-tVe"/>
                             <constraint firstAttribute="leadingMargin" secondItem="hBK-H1-IQe" secondAttribute="leading" id="Z2p-hg-djH"/>
-                            <constraint firstItem="luq-NN-ApA" firstAttribute="leading" secondItem="FnV-HJ-FPH" secondAttribute="trailing" constant="-159" id="Zed-OJ-eFZ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="zzt-pM-rZl" secondAttribute="leading" id="avn-63-efc"/>
                             <constraint firstItem="Tk2-e4-BAT" firstAttribute="leading" secondItem="ZsW-gO-AXW" secondAttribute="leadingMargin" constant="-16" id="c3p-f5-9K3"/>
                             <constraint firstItem="FnV-HJ-FPH" firstAttribute="top" secondItem="IH0-2O-1wz" secondAttribute="top" id="c9C-eV-HKL"/>
                             <constraint firstItem="hBK-H1-IQe" firstAttribute="top" secondItem="OVr-EU-omU" secondAttribute="bottom" constant="-3" id="edw-Mx-EAm"/>
                             <constraint firstItem="IH0-2O-1wz" firstAttribute="width" secondItem="FnV-HJ-FPH" secondAttribute="height" multiplier="80:79" id="jd2-DD-BWh"/>
                             <constraint firstItem="FnV-HJ-FPH" firstAttribute="leading" secondItem="ZsW-gO-AXW" secondAttribute="leading" id="kPw-hb-db0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aNB-YX-UyP" secondAttribute="trailing" constant="-16" id="mdl-A3-90y"/>
                             <constraint firstItem="luq-NN-ApA" firstAttribute="width" secondItem="FnV-HJ-FPH" secondAttribute="height" multiplier="143:320" id="nwo-z1-ghh"/>
                             <constraint firstItem="luq-NN-ApA" firstAttribute="leading" secondItem="OVr-EU-omU" secondAttribute="trailing" constant="8" id="oah-GU-QVJ"/>
                             <constraint firstItem="FnV-HJ-FPH" firstAttribute="top" secondItem="ZsW-gO-AXW" secondAttribute="top" id="sNX-Xu-kjJ"/>
-                            <constraint firstItem="FnV-HJ-FPH" firstAttribute="top" secondItem="qGz-n0-vEj" secondAttribute="bottom" constant="-50" id="u3I-SW-rLT"/>
-                            <constraint firstItem="qGz-n0-vEj" firstAttribute="leading" secondItem="FnV-HJ-FPH" secondAttribute="trailing" constant="-36" id="wdB-6r-n5T"/>
+                            <constraint firstItem="FnV-HJ-FPH" firstAttribute="top" secondItem="qGz-n0-vEj" secondAttribute="bottom" constant="-57" id="u3I-SW-rLT"/>
+                            <constraint firstItem="qGz-n0-vEj" firstAttribute="leading" secondItem="FnV-HJ-FPH" secondAttribute="trailing" constant="-40" id="wdB-6r-n5T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="luq-NN-ApA" secondAttribute="trailing" id="yut-tQ-6ZC"/>
                             <constraint firstItem="IH0-2O-1wz" firstAttribute="leading" secondItem="ZsW-gO-AXW" secondAttribute="leadingMargin" constant="-16" id="zeK-9Z-LtK"/>
                         </constraints>
                     </view>
@@ -498,7 +503,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1644" y="250"/>
+            <point key="canvasLocation" x="1642.5" y="249.29577464788733"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="Moi-SI-DZY">

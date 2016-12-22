@@ -20,6 +20,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>"O Fooderoso requer acesso à câmera para criar produtos e alterar o perfil"</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>"O Fooderoso requer acesso à suas fotos para criar produtos e alterar o perfil"</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Blogger-Sans.ttf</string>
