@@ -69,10 +69,11 @@ class FDProduct: NSObject {
             dict["seller"] = seller.id!
         }
         
-        var tagsKeys:[String] = []
+        var tagsKeys:[String:Bool] = [:]
         for tag in self.tags {
-            tagsKeys.append(tag.name)
+            tagsKeys[tag.name] = true
         }
+        dict["tags"] = tagsKeys
         
         return dict
     }

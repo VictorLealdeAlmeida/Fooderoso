@@ -10,6 +10,7 @@ import UIKit
 
 class AddProductTableViewController: UITableViewController {
 
+    @IBOutlet var photoProd: UIButton!
     @IBOutlet var prodImageView: UIImageView!
     @IBOutlet var nameTxtFld: UITextField!
     @IBOutlet var priceTxtFld: UITextField!
@@ -39,7 +40,7 @@ class AddProductTableViewController: UITableViewController {
         FDProductTag(withName: "salgado"),
         FDProductTag(withName: "doce")
     ]
-    var selectedTags: [String:Bool] = [:]
+    var selectedTags: [FDProductTag] = []
     
     
     override func viewDidLoad() {
@@ -190,7 +191,7 @@ extension AddProductTableViewController {
             return
         }
         
-        let product = FDProduct(withName: name, andDesc: desc, andPhoto: image, andPrice: price, andSeller: self.manager.currentUser!, andTags: [])
+        let product = FDProduct(withName: name, andDesc: desc, andPhoto: image, andPrice: price, andSeller: self.manager.currentUser!, andTags: self.selectedTags)
         self.manager.saveProduct(product)
         NotificationCenter.default.addObserver(self, selector: #selector(AddProductTableViewController.productSaved(notification:)), name: FDNotification.productCreatedSuccessfully, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(AddProductTableViewController.productNotSaved(notification:)), name: FDNotification.productCreationFailed, object: nil)
@@ -212,9 +213,9 @@ extension AddProductTableViewController {
     }
     
     @IBAction func cancelAdd(_ sender: Any) {
-        let alert = UIAlertController(title: "Cancelar", message: "Tem certeza de que deseja cancelar a adição de um novo produto?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Continuar editando", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Confirmar", style: .default, handler: { (action) in
+        let alert = UIAlertController(title: "Descartar produto ", message: "Ao sair sem salvar, as infomações inseridas serão descartadas. Deseja descartar as informações do novo produto?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Descartar", style: .default, handler: { (action) in
             self.navigationController?.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
@@ -233,6 +234,7 @@ extension AddProductTableViewController {
         
         // change the status of the elements:
         self.navigationItem.leftBarButtonItem?.isEnabled = !shouldLoad
+        self.photoProd.isEnabled = !shouldLoad
         self.nameTxtFld.isEnabled = !shouldLoad
         self.priceTxtFld.isEnabled = !shouldLoad
         self.descTxtFld.isEnabled = !shouldLoad
@@ -274,7 +276,7 @@ extension AddProductTableViewController: UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath as IndexPath) as! TagsCellCollection
-        cell.tagTitle.text = "#\(tags[(indexPath as NSIndexPath).row])"
+        cell.tagTitle.text = "#\(tags[(indexPath as NSIndexPath).row].name)"
         cell.tagTitle.sizeToFit()
         cell.tagTitle.textAlignment = .center;
         cell.layer.cornerRadius = cell.bounds.height/2;
@@ -286,14 +288,23 @@ extension AddProductTableViewController: UICollectionViewDataSource, UICollectio
         
         print("You selected cell #\(indexPath.item)!")
         
-        let color = UIColor(red:0.95, green:0.51, blue:0.36, alpha:1.00)
+        let tag = self.tags[indexPath.row]
+        
+        let selectedColor = UIColor(red:0.95, green:0.51, blue:0.36, alpha:1.00) // orange
         
         let selectedCell:UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
         
-        if selectedCell.contentView.backgroundColor != color{
-            selectedCell.contentView.backgroundColor = color
+        if selectedCell.contentView.backgroundColor != selectedColor{
+            selectedCell.contentView.backgroundColor = selectedColor
+            self.selectedTags.append(tag)
         }else{
-            selectedCell.contentView.backgroundColor = UIColor(red:0.68, green:0.68, blue:0.68, alpha:1.00)
+            selectedCell.contentView.backgroundColor = UIColor(red:0.68, green:0.68, blue:0.68, alpha:1.00) // gray
+            
+            for (index, currentTag) in self.tags.enumerated() {
+                if currentTag.name == tag.name {
+                    self.selectedTags.remove(at: index)
+                }
+            }
         }
         
     }

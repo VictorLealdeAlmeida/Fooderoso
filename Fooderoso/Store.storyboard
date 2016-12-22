@@ -411,10 +411,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="TAGS" footerTitle="Seleciona as tags correspondentes ao produto" id="rln-bo-1QD">
+                            <tableViewSection headerTitle="TAGS" footerTitle="Selecione as tags correspondentes ao produto" id="rln-bo-1QD">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="140" id="adn-IL-NoB">
-                                        <rect key="frame" x="0.0" y="464.5" width="320" height="140"/>
+                                        <rect key="frame" x="0.0" y="465" width="320" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="adn-IL-NoB" id="NyC-ZN-Dr4">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
@@ -464,8 +464,8 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                     <connections>
-                                                        <outlet property="dataSource" destination="80d-Zf-MEs" id="UZg-3i-aCs"/>
-                                                        <outlet property="delegate" destination="80d-Zf-MEs" id="KgE-bG-l0r"/>
+                                                        <outlet property="dataSource" destination="scf-7B-1Om" id="hxQ-rm-zZa"/>
+                                                        <outlet property="delegate" destination="scf-7B-1Om" id="wDW-ze-9ki"/>
                                                     </connections>
                                                 </collectionView>
                                             </subviews>
@@ -502,6 +502,7 @@
                         <outlet property="charactersCount" destination="bVk-QU-Syu" id="LOn-5E-OoB"/>
                         <outlet property="descTxtFld" destination="GWr-Uo-SVD" id="jel-xQ-u6e"/>
                         <outlet property="nameTxtFld" destination="eGk-aC-dBh" id="fzy-gP-NVm"/>
+                        <outlet property="photoProd" destination="4AT-ba-UY3" id="FfU-Yr-QPq"/>
                         <outlet property="priceTxtFld" destination="Fgq-Aj-n0n" id="2iQ-AF-KwO"/>
                         <outlet property="prodImageView" destination="wfI-cN-ubM" id="drS-P1-RqP"/>
                         <outlet property="tagsCollection" destination="gOr-yN-ssO" id="hQJ-aM-SWd"/>
