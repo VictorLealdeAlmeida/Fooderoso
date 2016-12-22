@@ -18,7 +18,6 @@ class AddProductTableViewController: UITableViewController {
     @IBOutlet var tagsCollection: UICollectionView!
     @IBOutlet var charactersCount: UILabel!
     
-    let manager = FooderosoManager.instance
     var prodImage: UIImage? {
         didSet {
             if self.prodImage != nil {
@@ -31,8 +30,17 @@ class AddProductTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
+    let manager = FooderosoManager.instance
+    var loadingView: UIView?
     
-    var tags = ["#Doce", "#Salgado", "#Chocolate", "#Espacial", "#Bebida"]
+    // Test Data
+    var tags = [
+        FDProductTag(withName: "chocolate"),
+        FDProductTag(withName: "salgado"),
+        FDProductTag(withName: "doce")
+    ]
+    var selectedTags: [String:Bool] = [:]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,7 +101,7 @@ extension AddProductTableViewController {
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
-            return 0.0
+            return CGFloat.leastNormalMagnitude
         } else {
             return 30.0
         }
@@ -184,6 +192,23 @@ extension AddProductTableViewController {
         
         let product = FDProduct(withName: name, andDesc: desc, andPhoto: image, andPrice: price, andSeller: self.manager.currentUser!, andTags: [])
         self.manager.saveProduct(product)
+        NotificationCenter.default.addObserver(self, selector: #selector(AddProductTableViewController.productSaved(notification:)), name: FDNotification.productCreatedSuccessfully, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AddProductTableViewController.productNotSaved(notification:)), name: FDNotification.productCreationFailed, object: nil)
+        
+        // Add Loading indicator
+//        let blurView = UIVisualEffectView(frame: self.view.frame)
+//        blurView.effect = UIBlurEffect(style: UIBlurEffectStyle.light)
+//        let blurView = UIView(frame: self.view.frame)
+//        blurView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5)
+        
+//        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+//        self.loadingView = blurView
+//        self.view.addSubview(self.loadingView!)
+//        self.loadingView!.addSubview(activityIndicator)
+//        activityIndicator.frame.
+        
+        self.toggleLoading(true)
+        
     }
     
     @IBAction func cancelAdd(_ sender: Any) {
@@ -195,7 +220,46 @@ extension AddProductTableViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func toggleLoading(_ shouldLoad: Bool) {
+        if shouldLoad {
+            let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+            activityIndicator.startAnimating()
+            let rightButton = UIBarButtonItem(customView: activityIndicator)
+            self.navigationItem.rightBarButtonItem = rightButton
+        } else {
+            let rightButton = UIBarButtonItem(title: "Salvar", style: UIBarButtonItemStyle.done, target: self, action: #selector(AddProductTableViewController.saveInfo(_:)))
+            self.navigationItem.rightBarButtonItem = rightButton
+        }
+        
+        // change the status of the elements:
+        self.navigationItem.leftBarButtonItem?.isEnabled = !shouldLoad
+        self.nameTxtFld.isEnabled = !shouldLoad
+        self.priceTxtFld.isEnabled = !shouldLoad
+        self.descTxtFld.isEnabled = !shouldLoad
+        self.tagsCollection.isUserInteractionEnabled = !shouldLoad
+    }
+    
 }
+
+//-------------------------------------------//
+//          NOTIFICATION LISTENERS           //
+//-------------------------------------------//
+extension AddProductTableViewController {
+    func productSaved(notification: Notification) {
+        let alert = UIAlertController(title: "Produto Salvo", message: "Seu produto foi salvo com sucesso!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+            self.navigationController?.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func productNotSaved(notification: Notification) {
+        let alert = UIAlertController(title: "Falha", message: "Ocorreu uma falha ao salvar o produto. Por favor, tente novamente.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
 
 //-------------------------------------------//
 //                COLLECTION                 //
@@ -210,7 +274,7 @@ extension AddProductTableViewController: UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath as IndexPath) as! TagsCellCollection
-        cell.tagTitle.text = tags[(indexPath as NSIndexPath).row]
+        cell.tagTitle.text = "#\(tags[(indexPath as NSIndexPath).row])"
         cell.tagTitle.sizeToFit()
         cell.tagTitle.textAlignment = .center;
         cell.layer.cornerRadius = cell.bounds.height/2;
@@ -229,7 +293,7 @@ extension AddProductTableViewController: UICollectionViewDataSource, UICollectio
         if selectedCell.contentView.backgroundColor != color{
             selectedCell.contentView.backgroundColor = color
         }else{
-            selectedCell.contentView.backgroundColor = UIColor(red:0.57, green:0.57, blue:0.57, alpha:1.00)
+            selectedCell.contentView.backgroundColor = UIColor(red:0.68, green:0.68, blue:0.68, alpha:1.00)
         }
         
     }
