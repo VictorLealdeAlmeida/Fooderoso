@@ -68,7 +68,7 @@ extension UserViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath as IndexPath) as! CellCollection
         
-        let product = self.manager.productsOnSale[indexPath.row]
+        let product = self.manager.userProducts[indexPath.row]
         cell.configWithProduct(product: product)
         return cell
     }
