@@ -21,8 +21,9 @@ class FDProduct: NSObject {
     }
     let seller: FDUser?
     var tags: [FDProductTag] = []
+    var selling: Bool = true
     
-    init(withId id: String, andJSON json: JSON, andSeller user: FDUser?=nil) {
+    init(withId id: String, andJSON json: JSON, andSeller user: FDUser?=nil, andStatus selling:Bool=true) {
         self.id = id
         self.name = json["name"].stringValue
         self.prodDescription = json["description"].stringValue
@@ -42,6 +43,8 @@ class FDProduct: NSObject {
         for tagKey in tagsArray {
             self.tags.append(FDProductTag(withName: tagKey))
         }
+        
+        self.selling = selling
     }
     
     init(withName name: String, andDesc desc: String, andPhoto photo: UIImage, andPrice price: Double, andSeller seller: FDUser, andTags tags: [FDProductTag]) {

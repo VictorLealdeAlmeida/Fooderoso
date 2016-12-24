@@ -34,6 +34,8 @@ class AddProductTableViewController: UITableViewController {
     let manager = FooderosoManager.instance
     var loadingView: UIView?
     
+    var currentProduct: FDProduct?
+    
     // Test Data
     var tags = [
         FDProductTag(withName: "doce"),
@@ -77,6 +79,17 @@ class AddProductTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func loadInfo() {
+        if let product = self.currentProduct {
+            self.nameTxtFld.text = product.name
+            self.priceTxtFld.text = "\(product.price)"
+            self.descTxtFld.text = product.description
+            self.prodImage = product.photo
+            
+            self.tagsCollection.reloadData()
+        }
+    }
 }
 
 //-------------------------------------------//
@@ -297,12 +310,12 @@ extension AddProductTableViewController: UICollectionViewDataSource, UICollectio
         
         let tag = self.tags[indexPath.row]
         
-        let selectedColor = UIColor(red:0.95, green:0.51, blue:0.36, alpha:1.00) // orange
+        let hightLightColor = UIColor(red:0.95, green:0.51, blue:0.36, alpha:1.00) // orange
         
         let selectedCell:UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
         
-        if selectedCell.contentView.backgroundColor != selectedColor{
-            selectedCell.contentView.backgroundColor = selectedColor
+        if selectedCell.contentView.backgroundColor != hightLightColor {
+            selectedCell.contentView.backgroundColor = hightLightColor
             self.selectedTags.append(tag)
         }else{
             selectedCell.contentView.backgroundColor = UIColor(red:0.68, green:0.68, blue:0.68, alpha:1.00) // gray

@@ -20,7 +20,14 @@ class FDNotification {
     static let noProductsFound = Notification.Name("noProductsFound")
     static let productsFound = Notification.Name("productsFound")
     
+    // User Products
+    static let userProductAdded = Notification.Name("userProductAdded")
+    static let userProductChanged = Notification.Name("userProductChanged")
+    static let userProductRemoved = Notification.Name("userProductRemoved")
+    static let noUserProductsFound = Notification.Name("noUserProductsFound")
+    
     // Selling
     static let sellingModeFailed = Notification.Name("sellingModeFailed")
     static let sellingModeUpdated = Notification.Name("sellingModeUpdated")
+    
 }

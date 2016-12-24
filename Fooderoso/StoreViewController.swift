@@ -14,19 +14,120 @@ class StoreViewController: BaseViewController {
     @IBOutlet var sellingTitleLbl: UILabel!
     @IBOutlet var placeBtn: UIButton!
     @IBOutlet var editBtn: UIButton!
+    @IBOutlet var productsCollection: UICollectionView!
     
-    var currentPlace: String?
+    var loadingView: UIView?
+    var collectionLoading: UIActivityIndicatorView?
     
-    var items = ["1", "2", "3", "4"]
+    var currentPlace: String? {
+        didSet {
+            if currentPlace == nil {
+                self.placeBtn.setTitle("Adicionar Local", for: .normal)
+                self.placeBtn.setTitle("Adicionar Local", for: .disabled)
+            } else {
+                 self.placeBtn.setTitle(self.currentPlace, for: .normal)
+                self.placeBtn.setTitle(self.currentPlace, for: .disabled)
+            }
+        }
+    }
+    var products:[FDProduct] = []
+    var editingProducts: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.statusSwitch.tintColor = UIColor(red:0.68, green:0.68, blue:0.68, alpha:1.00)
+        
+        self.loadInfo()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? AddProductTableViewController, let product = sender as? FDProduct {
+            vc.currentProduct = product
+        }
+    }
+    
+    func loadInfo() {
+        self.toggleCollectionLoading(true)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(StoreViewController.loadSellingStatus), name: FDNotification.userLoggedInSuccessfully, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(StoreViewController.loadProducts), name: FDNotification.userProductAdded, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(StoreViewController.loadProducts), name: FDNotification.userProductChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(StoreViewController.loadProducts), name: FDNotification.userProductRemoved, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(StoreViewController.loadProducts), name: FDNotification.noUserProductsFound, object: nil)
+        
+        self.loadSellingStatus()
+        self.manager.getUserProducts()
+    }
+    
+    func loadSellingStatus() {
+        self.statusSwitch.setOn(self.manager.currentUser!.selling, animated: true)
+        self.currentPlace = self.manager.currentUser?.location
+    }
+    
+    func loadProducts() {
+        DispatchQueue.main.async {
+            self.toggleCollectionLoading(false)
+            self.products = self.manager.userProducts
+            self.productsCollection.reloadData()
+        }
+    }
+    
+    func toggleCollectionLoading(_ shouldLoad: Bool) {
+        if shouldLoad {
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.productsCollection.alpha = 0.0
+            }, completion: { (Bool) in
+                self.productsCollection.isHidden = true
+                
+                let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+                activityIndicator.center = self.productsCollection.center
+                self.view.addSubview(activityIndicator)
+                activityIndicator.startAnimating()
+                self.collectionLoading = activityIndicator
+            })
+        } else {
+            
+            if let activityIndicator = self.collectionLoading {
+                activityIndicator.stopAnimating()
+                activityIndicator.removeFromSuperview()
+                self.collectionLoading = nil
+            }
+            
+            self.productsCollection.isHidden = false
+            UIView.animate(withDuration: 0.3, animations: {
+                self.productsCollection.alpha = 1.0
+            })
+        }
+    }
+    
+    func toggleLoading(_ shouldLoad: Bool) {
+        if shouldLoad {
+            let blurView = UIVisualEffectView(frame: self.view.frame)
+            blurView.effect = UIBlurEffect(style: UIBlurEffectStyle.light)
+            blurView.center = self.view.center
+            let activityIndicador = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+            activityIndicador.center = blurView.center
+            activityIndicador.startAnimating()
+            blurView.addSubview(activityIndicador)
+            blurView.alpha = 0.0
+            self.loadingView = blurView
+            self.view.addSubview(self.loadingView!)
+            UIView.animate(withDuration: 0.3, animations: { 
+                blurView.alpha = 1.0
+            })
+        } else {
+            UIView.animate(withDuration: 0.3, animations: { 
+                self.loadingView?.alpha = 0.0
+            }, completion: { (Bool) in
+                self.loadingView?.removeFromSuperview()
+            })
+        }
     }
    
 }
@@ -66,17 +167,48 @@ extension StoreViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(StoreViewController.sellingModeFailed), name: FDNotification.sellingModeFailed, object: nil)
     }
     
-    func toggleLoading(_ shouldLoad: Bool) {
-        
+    @IBAction func changePlace(_ sender: UIButton) {
+        if self.currentPlace != nil {
+            let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            actionSheet.addAction(UIAlertAction(title: "Alterar local", style: UIAlertActionStyle.default, handler: { (action) in
+                self.changePlace()
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Remover local", style: .destructive, handler: { (action) in
+                self.currentPlace = nil
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+            self.present(actionSheet, animated: true, completion: nil)
+        } else {
+            self.changePlace()
+        }
+    }
+    
+    private func changePlace() {
+        // TODO: handle place searching
+        let alert = UIAlertController(title: "Adicionar local", message: "Digite abaixo o nome do local onde você está vendendo.", preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "Centro de Informática - UFPE"
+        }
+        alert.addAction(UIAlertAction(title: "Adicionar", style: .default, handler: { (action) in
+            let place = alert.textFields?[0].text
+            if place == nil || place!.isEmpty {
+                // handle not valid place
+                return
+            }
+            self.currentPlace = place
+        }))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
 
 //--------------------------------------------//
-//                  ACTIONS                   //
+//               NOTIFICATIONS                //
 //--------------------------------------------//
 extension StoreViewController {
     func sellingModeUpdated() {
+        self.toggleLoading(false)
         NotificationCenter.default.removeObserver(self, name: FDNotification.sellingModeUpdated, object: nil)
         NotificationCenter.default.removeObserver(self, name: FDNotification.sellingModeFailed, object: nil)
         
@@ -96,9 +228,11 @@ extension StoreViewController {
         self.present(alert, animated: true, completion: nil)
         
         self.editBtn.isHidden = !self.statusSwitch.isOn
+        self.placeBtn.isEnabled = !self.statusSwitch.isOn
     }
     
     func sellingModeFailed() {
+        self.toggleLoading(false)
         NotificationCenter.default.removeObserver(self, name: FDNotification.sellingModeUpdated, object: nil)
         NotificationCenter.default.removeObserver(self, name: FDNotification.sellingModeFailed, object: nil)
         
@@ -118,57 +252,49 @@ extension StoreViewController {
 }
 
 //--------------------------------------------//
-//Extesion para cuidado do Collection dos produtos//
+//          COLLECTION VIEW PRODUCTS          //
 //--------------------------------------------//
 
 extension StoreViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
+        return self.products.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if((indexPath.row + 1) < self.items.count){
-
-        
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath as IndexPath) as! CellCollection
-            
-            
-            cell.productImage.image = UIImage(named: "feijoada")!
-            cell.productText.text = items[(indexPath as NSIndexPath).row]
-            
+        if indexPath.row == self.products.count {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addProductCell", for: indexPath)
             return cell
-            
-        }else{
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addProductCell", for: indexPath) 
-            return cell;
-            
         }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath as IndexPath) as! CellCollection
+        let product = self.products[(indexPath as NSIndexPath).row]
+
+        cell.configWithProduct(product: product)
+        
+        return cell
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
-        if((indexPath.row + 1) == self.items.count){
+        
+        if indexPath.row == self.products.count {
         
             print("You selected cell #\(indexPath.item)!")
             performSegue(withIdentifier: "addProdSegue", sender: nil)
                 
-        }else{
+        } else {
             
-            let selectedCell:UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
-            
-            if selectedCell.contentView.alpha != 1{
-                selectedCell.contentView.alpha = 1
-            }else{
-                selectedCell.contentView.alpha = 0.5
+            if self.editingProducts {
+                // multiple selection
+            } else {
+                // single selection
+                performSegue(withIdentifier: "addProdSegue", sender: self.products[indexPath.row])
             }
+            
         }
-        
-        
-        
-
     }
     
     //DelegateFlowLayout

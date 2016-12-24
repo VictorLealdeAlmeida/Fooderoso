@@ -70,6 +70,7 @@
 		6797D4061DCE3DAC00DD4587 /* FDProductTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDProductTag.swift; sourceTree = "<group>"; };
 		67CC02BE1E0978A30095B49C /* Store.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Store.storyboard; sourceTree = "<group>"; };
 		67CC02C01E097A050095B49C /* AddProductTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductTableViewController.swift; sourceTree = "<group>"; };
+		67CC02C21E0DAE7E0095B49C /* Test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Test.playground; sourceTree = "<group>"; };
 		67D778B01E0061B60048BED5 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		67D778B21E0062570048BED5 /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		67D778B51E00636B0048BED5 /* BloggerSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BloggerSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -232,6 +233,7 @@
 				D44C6D6D1DCBA189006DB663 /* Assets.xcassets */,
 				D44C6D6F1DCBA189006DB663 /* LaunchScreen.storyboard */,
 				D44C6D721DCBA189006DB663 /* Info.plist */,
+				67CC02C21E0DAE7E0095B49C /* Test.playground */,
 				6797D3F91DCE1F5A00DD4587 /* GoogleService-Info.plist */,
 				D44C6D6A1DCBA189006DB663 /* Fooderoso.xcdatamodeld */,
 			);

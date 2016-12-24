@@ -17,6 +17,9 @@ class FDUser: NSObject {
     var userDescription: String?
     var photo: UIImage? = nil
     
+    var selling: Bool = false
+    var location: String? = nil
+    
     init(withId id: String, andJSON json: JSON) {
         self.id = id
         self.firstName = json["first-name"].stringValue
@@ -26,6 +29,14 @@ class FDUser: NSObject {
         if let data = Data(base64Encoded: photoStr, options: .ignoreUnknownCharacters) {
             self.photo = UIImage(data: data)
         }
+        if let selling = json["is-selling"].bool {
+            self.selling = selling
+        }
+        
+        if let loc = json["location"]["name"].string {
+            self.location = loc
+        }
+        
     }
     
     override init() {
@@ -49,6 +60,12 @@ class FDUser: NSObject {
             let base64Img = imageData?.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
             
             dict["photo"] = base64Img
+        }
+        
+        dict["is-selling"] = self.selling
+        
+        if let loc = self.location {
+            dict["location"] = ["name" : loc]
         }
         
         return dict
