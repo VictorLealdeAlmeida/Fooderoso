@@ -46,7 +46,7 @@ class StoreViewController: BaseViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? AddProductTableViewController, let product = sender as? FDProduct {
+        if let vc = segue.destination.childViewControllers.first as? AddProductTableViewController, let product = sender as? FDProduct {
             vc.currentProduct = product
         }
     }
@@ -80,16 +80,18 @@ class StoreViewController: BaseViewController {
     func toggleCollectionLoading(_ shouldLoad: Bool) {
         if shouldLoad {
             
+            let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+            activityIndicator.center = self.productsCollection.center
+            self.view.addSubview(activityIndicator)
+            self.collectionLoading = activityIndicator
+            
             UIView.animate(withDuration: 0.3, animations: {
                 self.productsCollection.alpha = 0.0
             }, completion: { (Bool) in
-                self.productsCollection.isHidden = true
-                
-                let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
-                activityIndicator.center = self.productsCollection.center
-                self.view.addSubview(activityIndicator)
-                activityIndicator.startAnimating()
-                self.collectionLoading = activityIndicator
+                if self.products.count <= 0 {
+                    self.productsCollection.isHidden = true
+                    activityIndicator.startAnimating()
+                }
             })
         } else {
             

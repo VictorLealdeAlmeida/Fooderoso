@@ -17,6 +17,8 @@ class FDNotification {
     // Products
     static let productCreatedSuccessfully = Notification.Name("productCreatedSuccessfully")
     static let productCreationFailed = Notification.Name("productCreationFailed")
+    static let productUpdateSucceeded = Notification.Name("productUpdateSucceeded")
+    static let productUpdateFailed = Notification.Name("productUpdateFailed")
     static let noProductsFound = Notification.Name("noProductsFound")
     static let productsFound = Notification.Name("productsFound")
     

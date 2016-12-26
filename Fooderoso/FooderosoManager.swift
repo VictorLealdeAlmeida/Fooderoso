@@ -96,6 +96,33 @@ class FooderosoManager: NSObject {
         })
     }
     
+    func updateProduct(_ product: FDProduct, allTags: [FDProductTag]) {
+        var pathsDict:[String:Any] = [:]
+        let productKey = product.id!
+        pathsDict["products/\(productKey)"] = product.toDict()
+        
+        for tag in allTags {
+            pathsDict["tags/\(tag.name)/products/\(productKey)"] = nil
+        }
+        for tag in product.tags {
+            pathsDict["tags/\(tag.name)/products/\(productKey)"] = true
+        }
+        
+        pathsDict["users/\(self.currentUser!.id!)/products/\(productKey)"] = product.selling
+        
+        firebaseRef.updateChildValues(pathsDict, withCompletionBlock: { (error, ref) in
+            if let error = error {
+                print("FAILURE: something went wrong while trying to update the product")
+                print(error.localizedDescription)
+                NotificationCenter.default.post(name: FDNotification.productUpdateFailed, object: nil)
+                return
+            }
+            
+            print("SUCCESS: product updated successfully")
+            NotificationCenter.default.post(name: FDNotification.productUpdateSucceeded, object: nil)
+        })
+    }
+    
     func getProducts() {
         firebaseRef.child("products").queryOrdered(byChild: "selling").queryEqual(toValue: true).observe(.value, with: {productsSnapshot in
             guard let productsJSON = productsSnapshot.json else {

@@ -11,11 +11,11 @@ import UIKit
 import SwiftyJSON
 
 class FDProduct: NSObject {
-    let id: String?
-    let name: String
-    let prodDescription: String
-    let photo: UIImage
-    let price: Double
+    var id: String?
+    var name: String
+    var prodDescription: String
+    var photo: UIImage
+    var price: Double
     var priceString: String {
         return "R$\(String(format: "%.2f", self.price))"
     }

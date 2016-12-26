@@ -50,13 +50,12 @@ class AddProductTableViewController: UITableViewController {
         FDProductTag(withName: "zero-lactose")
     ]
     var selectedTags: [FDProductTag] = []
+    var selectedTagsDict: [String : Bool] = [:]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //TODO: set info if editing a product
-        self.charactersCount.text = "\(140-self.descTxtFld.text!.characters.count)/140"
+        self.loadInfo()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -81,14 +80,25 @@ class AddProductTableViewController: UITableViewController {
     */
     
     func loadInfo() {
+        for tag in self.tags {
+            self.selectedTagsDict[tag.name] = false
+        }
+        
         if let product = self.currentProduct {
             self.nameTxtFld.text = product.name
-            self.priceTxtFld.text = "\(product.price)"
-            self.descTxtFld.text = product.description
+            self.priceTxtFld.text = "\(String(format: "%.2f", arguments: [product.price]))"
+            self.descTxtFld.text = product.prodDescription
             self.prodImage = product.photo
+            
+            for tag in product.tags {
+                self.selectedTags.append(tag)
+                self.selectedTagsDict[tag.name] = true
+            }
             
             self.tagsCollection.reloadData()
         }
+        self.descTxtFld.delegate = self
+        self.charactersCount.text = "\(140-self.descTxtFld.text!.characters.count)/140"
     }
 }
 
@@ -211,10 +221,32 @@ extension AddProductTableViewController {
             return
         }
         
-        let product = FDProduct(withName: name, andDesc: desc, andPhoto: image, andPrice: price, andSeller: self.manager.currentUser!, andTags: self.selectedTags)
-        self.manager.saveProduct(product)
-        NotificationCenter.default.addObserver(self, selector: #selector(AddProductTableViewController.productSaved(notification:)), name: FDNotification.productCreatedSuccessfully, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(AddProductTableViewController.productNotSaved(notification:)), name: FDNotification.productCreationFailed, object: nil)
+        if self.selectedTags.count <= 0 {
+            let alert = UIAlertController(title: "Informações faltando", message: "Por favor, selecione ao menos uma tag para classificar seu produto.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if let product = self.currentProduct {
+            product.name = name
+            product.prodDescription = desc
+            product.price = price
+            product.photo = image
+            product.tags = self.selectedTags
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(AddProductTableViewController.productSaved(notification:)), name: FDNotification.productCreatedSuccessfully, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(AddProductTableViewController.productNotSaved(notification:)), name: FDNotification.productCreationFailed, object: nil)
+            
+            self.manager.updateProduct(product, allTags: self.tags)
+        } else {
+            let product = FDProduct(withName: name, andDesc: desc, andPhoto: image, andPrice: price, andSeller: self.manager.currentUser!, andTags: self.selectedTags)
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(AddProductTableViewController.productSaved(notification:)), name: FDNotification.productCreatedSuccessfully, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(AddProductTableViewController.productNotSaved(notification:)), name: FDNotification.productCreationFailed, object: nil)
+            
+            self.manager.saveProduct(product)
+        }
         
         // Add Loading indicator
 //        let blurView = UIVisualEffectView(frame: self.view.frame)
@@ -295,11 +327,18 @@ extension AddProductTableViewController: UICollectionViewDataSource, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        let tag = tags[(indexPath as NSIndexPath).row]
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath as IndexPath) as! TagsCellCollection
-        cell.tagTitle.text = "#\(tags[(indexPath as NSIndexPath).row].name)"
+        cell.tagTitle.text = "#\(tag.name)"
         cell.tagTitle.sizeToFit()
         cell.tagTitle.textAlignment = .center;
         cell.layer.cornerRadius = cell.bounds.height/2;
+        
+        let isSelected = self.selectedTagsDict[tags[(indexPath as NSIndexPath).row].name] ?? false
+        if isSelected {
+            cell.contentView.backgroundColor = UIColor(red:0.95, green:0.51, blue:0.36, alpha:1.00)
+        }
         
         return cell
     }
@@ -317,8 +356,18 @@ extension AddProductTableViewController: UICollectionViewDataSource, UICollectio
         if selectedCell.contentView.backgroundColor != hightLightColor {
             selectedCell.contentView.backgroundColor = hightLightColor
             self.selectedTags.append(tag)
+            self.selectedTagsDict[tag.name] = true
         }else{
             selectedCell.contentView.backgroundColor = UIColor(red:0.68, green:0.68, blue:0.68, alpha:1.00) // gray
+            
+            // remove from selected
+            for (index, currentTag) in self.selectedTags.enumerated() {
+                if currentTag.name == tag.name {
+                    self.selectedTags.remove(at: index)
+                    break
+                }
+            }
+            self.selectedTagsDict[tag.name] = false
             
             for (index, currentTag) in self.tags.enumerated() {
                 if currentTag.name == tag.name {
@@ -343,11 +392,12 @@ extension AddProductTableViewController: UIImagePickerControllerDelegate, UINavi
 
 
 //-------------------------------------------//
-//             TEXT VIEW DELEGATE            //
+//             TEXT FIELD DELEGATE            //
 //-------------------------------------------//
-extension AddProductTableViewController: UITextViewDelegate {
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        let newSize = textView.text.characters.count + (text.characters.count - range.length)
+extension AddProductTableViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newSize = textField.text!.characters.count + (string.characters.count - range.length)
         if newSize <= 140 {
             self.charactersCount.text = "\(140-newSize)/140"
             return true
