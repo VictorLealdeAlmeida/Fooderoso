@@ -120,6 +120,16 @@ class FooderosoManager: NSObject {
             
             print("SUCCESS: product updated successfully")
             NotificationCenter.default.post(name: FDNotification.productUpdateSucceeded, object: nil)
+            
+            // replace the updated product on user products list
+            for (index, prod) in self.userProducts.enumerated() {
+                if prod.id == product.id! {
+                    let range = Range(uncheckedBounds: (lower: index, upper: index+1))
+                    self.userProducts.replaceSubrange(range, with: [product])
+                    NotificationCenter.default.post(name: FDNotification.userProductChanged, object: nil, userInfo: ["product" : product, "productId" : product.id!] )
+                    return
+                }
+            }
         })
     }
     

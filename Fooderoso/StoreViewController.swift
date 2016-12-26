@@ -30,7 +30,7 @@ class StoreViewController: BaseViewController {
             }
         }
     }
-    var products:[FDProduct] = []
+//    var products:[FDProduct] = []
     var editingProducts: Bool = false
     
     override func viewDidLoad() {
@@ -72,7 +72,7 @@ class StoreViewController: BaseViewController {
     func loadProducts() {
         DispatchQueue.main.async {
             self.toggleCollectionLoading(false)
-            self.products = self.manager.userProducts
+//            self.products = self.manager.userProducts
             self.productsCollection.reloadData()
         }
     }
@@ -88,7 +88,7 @@ class StoreViewController: BaseViewController {
             UIView.animate(withDuration: 0.3, animations: {
                 self.productsCollection.alpha = 0.0
             }, completion: { (Bool) in
-                if self.products.count <= 0 {
+                if self.manager.userProducts.count <= 0 {
                     self.productsCollection.isHidden = true
                     activityIndicator.startAnimating()
                 }
@@ -260,18 +260,18 @@ extension StoreViewController {
 extension StoreViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.products.count + 1
+        return self.manager.userProducts.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if indexPath.row == self.products.count {
+        if indexPath.row == self.manager.userProducts.count {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addProductCell", for: indexPath)
             return cell
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath as IndexPath) as! CellCollection
-        let product = self.products[(indexPath as NSIndexPath).row]
+        let product = self.manager.userProducts[(indexPath as NSIndexPath).row]
 
         cell.configWithProduct(product: product)
         
@@ -282,7 +282,7 @@ extension StoreViewController: UICollectionViewDelegateFlowLayout, UICollectionV
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         
-        if indexPath.row == self.products.count {
+        if indexPath.row == self.manager.userProducts.count {
         
             print("You selected cell #\(indexPath.item)!")
             performSegue(withIdentifier: "addProdSegue", sender: nil)
@@ -293,7 +293,7 @@ extension StoreViewController: UICollectionViewDelegateFlowLayout, UICollectionV
                 // multiple selection
             } else {
                 // single selection
-                performSegue(withIdentifier: "addProdSegue", sender: self.products[indexPath.row])
+                performSegue(withIdentifier: "addProdSegue", sender: self.manager.userProducts[indexPath.row])
             }
             
         }
