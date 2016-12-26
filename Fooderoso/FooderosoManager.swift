@@ -28,6 +28,7 @@ class FooderosoManager: NSObject {
     fileprivate var userChatsKeys: [String] = []
     fileprivate var userProductsKeys: [String:Bool] = [:]
     fileprivate var loadedUsers: [FDUser] = []
+    fileprivate var userProductsRequested: Bool = false
     
     /*
      #################
@@ -165,6 +166,11 @@ class FooderosoManager: NSObject {
             NotificationCenter.default.post(name: FDNotification.noUserProductsFound, object: nil)
         }
         
+        if self.userProductsRequested {
+            return
+        }
+        self.userProductsRequested = true
+        
         self.listenToUserAddedProducts()
         self.listenToUserChangedProduct()
         self.listenToUserRemovedProducts()
@@ -177,6 +183,9 @@ class FooderosoManager: NSObject {
         if let loc = location {
             pathsDict["users/\(self.currentUser!.id!)/location/name"] = loc
         }
+        for prod in self.userProducts {
+            pathsDict["products/\(prod.id!)/selling"] = status ? self.userProductsKeys[prod.id!]! : false
+        }
         
         firebaseRef.updateChildValues(pathsDict, withCompletionBlock: { (error, ref) in
             if let error = error {
@@ -187,6 +196,25 @@ class FooderosoManager: NSObject {
             }
             
             NotificationCenter.default.post(name: FDNotification.sellingModeUpdated, object: nil)
+        })
+    }
+    
+    func updateSellingProducts(productsKeysToUpdate productsKeys: [String : Bool]) {
+        var pathsDict:[String:Any] = [:]
+        for (prodKey, value) in productsKeys {
+            pathsDict["users/\(self.currentUser!.id!)/products/\(prodKey)"] = value
+            pathsDict["products/\(prodKey)/selling"] = value
+        }
+        
+        firebaseRef.updateChildValues(pathsDict, withCompletionBlock: { (error, ref) in
+            if let error = error {
+                print("FAILURE: something went wrong while trying to update the selling products")
+                print(error.localizedDescription)
+                NotificationCenter.default.post(name: FDNotification.sellingProductsFailed, object: nil)
+                return
+            }
+            
+            NotificationCenter.default.post(name: FDNotification.sellingProductsUpdated, object: nil)
         })
     }
     

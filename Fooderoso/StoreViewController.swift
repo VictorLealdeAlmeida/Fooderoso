@@ -30,8 +30,9 @@ class StoreViewController: BaseViewController {
             }
         }
     }
-//    var products:[FDProduct] = []
+
     var editingProducts: Bool = false
+    var changedProductsKeys: [String : Bool] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,7 @@ class StoreViewController: BaseViewController {
         
         self.loadInfo()
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -203,6 +205,21 @@ extension StoreViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func toggleEditingProd(_ sender: Any) {
+        self.isEditing = !self.isEditing
+        
+        if self.isEditing {
+            self.editBtn.setTitle("Salvar", for: .normal)
+            let alert = UIAlertController(title: "Selecionar produtos", message: "Selecione os produtos a serem vendidos no momento", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            self.editBtn.setTitle("Editar", for: .normal)
+            self.manager.updateSellingProducts(productsKeysToUpdate: self.changedProductsKeys)
+            self.changedProductsKeys = [:]
+        }
+    }
+    
 }
 
 //--------------------------------------------//
@@ -288,12 +305,16 @@ extension StoreViewController: UICollectionViewDelegateFlowLayout, UICollectionV
             performSegue(withIdentifier: "addProdSegue", sender: nil)
                 
         } else {
-            
+            let product = self.manager.userProducts[indexPath.row]
             if self.editingProducts {
                 // multiple selection
+                product.selling = !product.selling
+                let cell = collectionView.cellForItem(at: indexPath) as! CellCollection
+                cell.toggleCheck(product.selling)
+                self.changedProductsKeys[product.id!] = product.selling
             } else {
                 // single selection
-                performSegue(withIdentifier: "addProdSegue", sender: self.manager.userProducts[indexPath.row])
+                performSegue(withIdentifier: "addProdSegue", sender: product)
             }
             
         }

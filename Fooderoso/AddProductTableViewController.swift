@@ -235,8 +235,8 @@ extension AddProductTableViewController {
             product.photo = image
             product.tags = self.selectedTags
             
-            NotificationCenter.default.addObserver(self, selector: #selector(AddProductTableViewController.productSaved(notification:)), name: FDNotification.productCreatedSuccessfully, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(AddProductTableViewController.productNotSaved(notification:)), name: FDNotification.productCreationFailed, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(AddProductTableViewController.productSaved(notification:)), name: FDNotification.productUpdateSucceeded, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(AddProductTableViewController.productNotSaved(notification:)), name: FDNotification.productUpdateFailed, object: nil)
             
             self.manager.updateProduct(product, allTags: self.tags)
         } else {
